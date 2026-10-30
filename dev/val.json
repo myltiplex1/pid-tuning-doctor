@@ -1,0 +1,2517 @@
+[
+ {
+  "input": "I am tuning a PID controller for DC motor position control (QUBE-Servo 3 with inertia disc). Requirements: settle within 830 ms with at most 15% overshoot, no more than 2 oscillation cycles, at most 2% error at the end and control ripple of at most 0.3%. Gains are Kp=5.143, Ki=23.434, Kd=0.136. The step response shows overshoot 6%, rise time 38 ms, actuator never at its limit, error at the end of the recording 0.0%, no oscillation, control ripple 0.0%, settling time 406 ms. What is wrong?",
+  "output": "Diagnosis: Well tuned.\nEvidence: all requirements met: overshoot 6%, settles at 406 ms, 0.0% error at the end, ripple 0.0%.\nFix: No change needed. Keep the current gains.\nThis is a learning aid; check with your instructor if unsure.",
+  "spec": {
+   "os_max": 15.0,
+   "ts_max": 0.83,
+   "sse_max": 2.0,
+   "osc_max": 2,
+   "rip_max": 0.3
+  },
+  "label": "well_tuned",
+  "plant": "dc_motor",
+  "gains": {
+   "kp": 5.142526189628388,
+   "ki": 23.434232188493343,
+   "kd": 0.13577887481189954
+  },
+  "nominal_gains": {
+   "kp": 4.6867589258812075,
+   "ki": 26.82127656828819,
+   "kd": 0.15189124236616833
+  },
+  "u_limit": 10.0,
+  "u_required": 0.39477196741918763,
+  "violations": [],
+  "metrics": {
+   "overshoot": 6.174489883711418,
+   "rise": 0.038000000000000006,
+   "settle": 0.406,
+   "sse": 0.004977781478154255,
+   "oscillations": 0.0,
+   "sat": 0.0,
+   "sat_time": 0.0,
+   "ripple": 0.0,
+   "u_peak": 5.769936096318713,
+   "T": 2.49
+  },
+  "split": "val"
+ },
+ {
+  "input": "A first-order process (like a motor speed loop or small thermal system) under PID control (Kp=2.481, Ki=6.1, Kd=0). Requirements: settle within 2.20 s with at most 15% overshoot, no more than 2 oscillation cycles, at most 2% error at the end and control ripple of at most 1.0%. Measured step response: 7% overshoot, 10-90% rise time 300 ms, no oscillation, control signal at its limit for 10 ms (0% of the recording), 2% settling time 1.42 s, control-signal ripple 0.4% of full scale, 0.0% error left at the end of the recording.",
+  "output": "Diagnosis: Well tuned.\nEvidence: all requirements met: overshoot 7%, settles at 1.42 s, 0.0% error at the end, ripple 0.4%.\nFix: No change needed. Keep the current gains.\nThis is a learning aid; check with your instructor if unsure.",
+  "spec": {
+   "os_max": 15.0,
+   "ts_max": 2.2,
+   "sse_max": 2.0,
+   "osc_max": 2,
+   "rip_max": 1.0
+  },
+  "label": "well_tuned",
+  "plant": "first_order",
+  "gains": {
+   "kp": 2.480825220180107,
+   "ki": 6.1004288691093835,
+   "kd": 0.0
+  },
+  "nominal_gains": {
+   "kp": 2.179418857434511,
+   "ki": 6.392471508279389,
+   "kd": 0.0
+  },
+  "u_limit": 4.904725837089892,
+  "u_required": 1.7404247462388363,
+  "violations": [],
+  "metrics": {
+   "overshoot": 6.903962614673081,
+   "rise": 0.29984306257389853,
+   "settle": 1.4192571628497863,
+   "sse": 0.011566603715431941,
+   "oscillations": 0.0,
+   "sat": 0.10706638115631692,
+   "sat_time": 0.009994768752463284,
+   "ripple": 0.3714001745729422,
+   "u_peak": 4.885774094328512,
+   "T": 9.325119246048244
+  },
+  "split": "val"
+ },
+ {
+  "input": "System: a second-order system (like a mass-spring-damper)\nRequirements: settle within 11.00 s with at most 15% overshoot, no more than 2 oscillation cycles, at most 2% error at the end and control ripple of at most 5.6%\nPID gains: Kp=1.718, Ki=0.832, Kd=0.465\nObserved: overshoot 8%, rise time 752 ms, settling time 5.34 s, no oscillation, control ripple 2.0%, 0.0% error left at the end of the recording, actuator saturated for 320 ms (1% of the recording)\nDiagnose the tuning.",
+  "output": "Diagnosis: Well tuned.\nEvidence: all requirements met: overshoot 8%, settles at 5.34 s, 0.0% error at the end, ripple 2.0%.\nFix: No change needed. Keep the current gains.\nThis is a learning aid; check with your instructor if unsure.",
+  "spec": {
+   "os_max": 15.0,
+   "ts_max": 11.0,
+   "sse_max": 2.0,
+   "osc_max": 2,
+   "rip_max": 5.6
+  },
+  "label": "well_tuned",
+  "plant": "second_order",
+  "gains": {
+   "kp": 1.7176041502028612,
+   "ki": 0.8316237746307528,
+   "kd": 0.46523869497575643
+  },
+  "nominal_gains": {
+   "kp": 1.548270489899659,
+   "ki": 0.7880147139687457,
+   "kd": 0.4623307577805291
+  },
+  "u_limit": 0.9887780141278216,
+  "u_required": 0.22689798089417218,
+  "violations": [],
+  "metrics": {
+   "overshoot": 8.29836323953056,
+   "rise": 0.7522106559188588,
+   "settle": 5.340695657023898,
+   "sse": 0.005550184855616347,
+   "oscillations": 0.0,
+   "sat": 0.9681093394077449,
+   "sat_time": 0.319689528765515,
+   "ripple": 1.9632522423046153,
+   "u_peak": 0.9887780141278216,
+   "T": 33.00324252843993
+  },
+  "split": "val"
+ },
+ {
+  "input": "I am tuning a PID controller for DC motor position control (QUBE-Servo 3 with inertia disc). Requirements: overshoot at most 15%, settling time at most 1.00 s, at most 2 oscillation cycles, error at most 2% at the end, control ripple at most 0.4%. Gains are Kp=3.976, Ki=11.097, Kd=0.211. The step response shows 5% overshoot, rise time 102 ms, control-signal ripple 0.0% of full scale, error at the end of the recording 0.2%, 2% settling time 706 ms, actuator never at its limit, no oscillation. What is wrong?",
+  "output": "Diagnosis: Well tuned.\nEvidence: all requirements met: overshoot 5%, settles at 706 ms, 0.2% error at the end, ripple 0.0%.\nFix: No change needed. Keep the current gains.\nThis is a learning aid; check with your instructor if unsure.",
+  "spec": {
+   "os_max": 15.0,
+   "ts_max": 1.0,
+   "sse_max": 2.0,
+   "osc_max": 2,
+   "rip_max": 0.4
+  },
+  "label": "well_tuned",
+  "plant": "dc_motor",
+  "gains": {
+   "kp": 3.9763026159877186,
+   "ki": 11.09685163980884,
+   "kd": 0.2105900189259134
+  },
+  "nominal_gains": {
+   "kp": 3.9895539484898173,
+   "ki": 12.591904326768384,
+   "kd": 0.21019960474977115
+  },
+  "u_limit": 10.0,
+  "u_required": 0.49348409605353094,
+  "violations": [],
+  "metrics": {
+   "overshoot": 4.759401936822925,
+   "rise": 0.102,
+   "settle": 0.706,
+   "sse": 0.17962693861038906,
+   "oscillations": 0.0,
+   "sat": 0.0,
+   "sat_time": 0.0,
+   "ripple": 0.027765114255274045,
+   "u_peak": 4.811395060816351,
+   "T": 3.0
+  },
+  "split": "val"
+ },
+ {
+  "input": "I am tuning a PID controller for a first-order process (like a motor speed loop or small thermal system). Requirements: overshoot at most 15%, settling time at most 560 ms, at most 2 oscillation cycles, error at most 2% at the end, control ripple at most 1.2%. Gains are Kp=3.79, Ki=33.764, Kd=0. The step response shows peak overshoot of 11%, 10-90% rise time 55 ms, actuator saturated for 25 ms (1% of the recording), 0.0% error left at the end of the recording, settling time 341 ms, no oscillation, control-signal ripple 0.4% of full scale. What is wrong?",
+  "output": "Diagnosis: Well tuned.\nEvidence: all requirements met: overshoot 11%, settles at 341 ms, 0.0% error at the end, ripple 0.4%.\nFix: No change needed. Keep the current gains.\nThis is a learning aid; check with your instructor if unsure.",
+  "spec": {
+   "os_max": 15.0,
+   "ts_max": 0.56,
+   "sse_max": 2.0,
+   "osc_max": 2,
+   "rip_max": 1.2
+  },
+  "label": "well_tuned",
+  "plant": "first_order",
+  "gains": {
+   "kp": 3.789896561953071,
+   "ki": 33.76383858526651,
+   "kd": 0.0
+  },
+  "nominal_gains": {
+   "kp": 3.763124374605636,
+   "ki": 33.91230829460426,
+   "kd": 0.0
+  },
+  "u_limit": 4.279655274500855,
+  "u_required": 0.9522562132853497,
+  "violations": [],
+  "metrics": {
+   "overshoot": 11.484249234936813,
+   "rise": 0.05542489311475525,
+   "settle": 0.34086309265574477,
+   "sse": 0.015618604619031232,
+   "oscillations": 0.0,
+   "sat": 1.0778443113772456,
+   "sat_time": 0.02494120190163986,
+   "ripple": 0.4471304261699253,
+   "u_peak": 4.279655274500855,
+   "T": 2.3112180428852938
+  },
+  "split": "val"
+ },
+ {
+  "input": "System: a second-order system (like a mass-spring-damper)\nRequirements: settle within 5.60 s with at most 15% overshoot, no more than 2 oscillation cycles, at most 2% error at the end and control ripple of at most 4.2%\nPID gains: Kp=0.671, Ki=1.045, Kd=0.209\nObserved: 5% overshoot, rise time 818 ms, error at the end of the recording 0.0%, control-signal ripple 1.4% of full scale, actuator never at its limit, settling time 2.83 s, no oscillation\nDiagnose the tuning.",
+  "output": "Diagnosis: Well tuned.\nEvidence: all requirements met: overshoot 5%, settles at 2.83 s, 0.0% error at the end, ripple 1.4%.\nFix: No change needed. Keep the current gains.\nThis is a learning aid; check with your instructor if unsure.",
+  "spec": {
+   "os_max": 15.0,
+   "ts_max": 5.6,
+   "sse_max": 2.0,
+   "osc_max": 2,
+   "rip_max": 4.2
+  },
+  "label": "well_tuned",
+  "plant": "second_order",
+  "gains": {
+   "kp": 0.6706691027883828,
+   "ki": 1.0446416971850119,
+   "kd": 0.20853223930239395
+  },
+  "nominal_gains": {
+   "kp": 0.7420074949125448,
+   "ki": 1.221718396576852,
+   "kd": 0.19520767339455683
+  },
+  "u_limit": 3.427690820503784,
+  "u_required": 0.9565434818311359,
+  "violations": [],
+  "metrics": {
+   "overshoot": 5.163441422541774,
+   "rise": 0.8177103833972883,
+   "settle": 2.826007085021029,
+   "sse": 0.005158481830796175,
+   "oscillations": 0.0,
+   "sat": 0.0,
+   "sat_time": 0.0,
+   "ripple": 1.3732425690790961,
+   "u_peak": 1.3384589111522378,
+   "T": 16.805583799581072
+  },
+  "split": "val"
+ },
+ {
+  "input": "Plant: DC motor position control (QUBE-Servo 3 with inertia disc).\nRequirements: settle within 970 ms with at most 15% overshoot, no more than 2 oscillation cycles, at most 2% error at the end and control ripple of at most 0.4%.\nGains: Kp=4.736, Ki=19.246, Kd=0.153.\nStep response: 7% overshoot, 10-90% rise time 48 ms, actuator never at its limit, settling time 506 ms, no oscillation, 0.1% error left at the end of the recording, control-signal ripple 0.0% of full scale.",
+  "output": "Diagnosis: Well tuned.\nEvidence: all requirements met: overshoot 7%, settles at 506 ms, 0.1% error at the end, ripple 0.0%.\nFix: No change needed. Keep the current gains.\nThis is a learning aid; check with your instructor if unsure.",
+  "spec": {
+   "os_max": 15.0,
+   "ts_max": 0.97,
+   "sse_max": 2.0,
+   "osc_max": 2,
+   "rip_max": 0.4
+  },
+  "label": "well_tuned",
+  "plant": "dc_motor",
+  "gains": {
+   "kp": 4.73628397260927,
+   "ki": 19.24572361329725,
+   "kd": 0.15314165524532794
+  },
+  "nominal_gains": {
+   "kp": 4.394361756611686,
+   "ki": 19.13201514358665,
+   "kd": 0.14453436673495565
+  },
+  "u_limit": 10.0,
+  "u_required": 0.4309333215818446,
+  "violations": [],
+  "metrics": {
+   "overshoot": 6.682926508507651,
+   "rise": 0.048,
+   "settle": 0.506,
+   "sse": 0.050512639958321705,
+   "oscillations": 0.0,
+   "sat": 0.0,
+   "sat_time": 0.0,
+   "ripple": 0.0,
+   "u_peak": 7.071632401300132,
+   "T": 2.91
+  },
+  "split": "val"
+ },
+ {
+  "input": "I am tuning a PID controller for a first-order process (like a motor speed loop or small thermal system). Requirements: overshoot at most 15%, settling time at most 1.10 s, at most 2 oscillation cycles, error at most 2% at the end, control ripple at most 0.8%. Gains are Kp=0.842, Ki=6.007, Kd=0. The step response shows peak overshoot of 8%, rise time 133 ms, no oscillation, 0.0% error left at the end of the recording, control ripple 0.3%, 2% settling time 594 ms, actuator never at its limit. What is wrong?",
+  "output": "Diagnosis: Well tuned.\nEvidence: all requirements met: overshoot 8%, settles at 594 ms, 0.0% error at the end, ripple 0.3%.\nFix: No change needed. Keep the current gains.\nThis is a learning aid; check with your instructor if unsure.",
+  "spec": {
+   "os_max": 15.0,
+   "ts_max": 1.1,
+   "sse_max": 2.0,
+   "osc_max": 2,
+   "rip_max": 0.8
+  },
+  "label": "well_tuned",
+  "plant": "first_order",
+  "gains": {
+   "kp": 0.8423767285593204,
+   "ki": 6.006525457176212,
+   "kd": 0.0
+  },
+  "nominal_gains": {
+   "kp": 0.8947382977338115,
+   "ki": 5.255425313194375,
+   "kd": 0.0
+  },
+  "u_limit": 2.456229826593192,
+  "u_required": 0.6545640006853998,
+  "violations": [],
+  "metrics": {
+   "overshoot": 8.272681340763336,
+   "rise": 0.13305396529342597,
+   "settle": 0.5943077116439693,
+   "sse": 0.009283379369405136,
+   "oscillations": 0.0,
+   "sat": 0.0,
+   "sat_time": 0.0,
+   "ripple": 0.25961143486439253,
+   "u_peak": 1.610524981318918,
+   "T": 3.982748694449884
+  },
+  "split": "val"
+ },
+ {
+  "input": "System: a second-order system (like a mass-spring-damper)\nRequirements: settle within 6.40 s with at most 10% overshoot, no more than 2 oscillation cycles, at most 2% error at the end and control ripple of at most 4.3%\nPID gains: Kp=0.713, Ki=0.743, Kd=0.175\nObserved: overshoot 7%, 10-90% rise time 825 ms, actuator never at its limit, control ripple 1.5%, 0.0% error left at the end of the recording, 2% settling time 3.64 s, no oscillation\nDiagnose the tuning.",
+  "output": "Diagnosis: Well tuned.\nEvidence: all requirements met: overshoot 7%, settles at 3.64 s, 0.0% error at the end, ripple 1.5%.\nFix: No change needed. Keep the current gains.\nThis is a learning aid; check with your instructor if unsure.",
+  "spec": {
+   "os_max": 10.0,
+   "ts_max": 6.4,
+   "sse_max": 2.0,
+   "osc_max": 2,
+   "rip_max": 4.3
+  },
+  "label": "well_tuned",
+  "plant": "second_order",
+  "gains": {
+   "kp": 0.7132121521979429,
+   "ki": 0.7432520901247655,
+   "kd": 0.17487094718021418
+  },
+  "nominal_gains": {
+   "kp": 0.8158556487995327,
+   "ki": 0.7982162905414482,
+   "kd": 0.18338823872846877
+  },
+  "u_limit": 1.6822162763208266,
+  "u_required": 0.3593878680712268,
+  "violations": [],
+  "metrics": {
+   "overshoot": 7.306085291972784,
+   "rise": 0.8251241269364453,
+   "settle": 3.641927180960862,
+   "sse": 0.005700995052915315,
+   "oscillations": 0.0,
+   "sat": 0.0,
+   "sat_time": 0.0,
+   "ripple": 1.4544762440839898,
+   "u_peak": 0.809005612112038,
+   "T": 19.205475368348296
+  },
+  "split": "val"
+ },
+ {
+  "input": "I am tuning a PID controller for DC motor position control (QUBE-Servo 3 with inertia disc). Requirements: settle within 740 ms with at most 15% overshoot, no more than 2 oscillation cycles, at most 2% error at the end and control ripple of at most 0.5%. Gains are Kp=6.553, Ki=26.503, Kd=0.182. The step response shows overshoot 8%, rise time 34 ms, no oscillation, actuator never at its limit, 0.0% error left at the end of the recording, control-signal ripple 0.0% of full scale, settling time 492 ms. What is wrong?",
+  "output": "Diagnosis: Well tuned.\nEvidence: all requirements met: overshoot 8%, settles at 492 ms, 0.0% error at the end, ripple 0.0%.\nFix: No change needed. Keep the current gains.\nThis is a learning aid; check with your instructor if unsure.",
+  "spec": {
+   "os_max": 15.0,
+   "ts_max": 0.74,
+   "sse_max": 2.0,
+   "osc_max": 2,
+   "rip_max": 0.5
+  },
+  "label": "well_tuned",
+  "plant": "dc_motor",
+  "gains": {
+   "kp": 6.553436473052054,
+   "ki": 26.50323895709589,
+   "kd": 0.1822170941921067
+  },
+  "nominal_gains": {
+   "kp": 5.765089685494245,
+   "ki": 30.120301131693367,
+   "kd": 0.1750275184673657
+  },
+  "u_limit": 10.0,
+  "u_required": 0.24847341838777418,
+  "violations": [],
+  "metrics": {
+   "overshoot": 7.786551013791308,
+   "rise": 0.034,
+   "settle": 0.492,
+   "sse": 0.010773953163796746,
+   "oscillations": 0.0,
+   "sat": 0.0,
+   "sat_time": 0.0,
+   "ripple": 1.5090750400691035e-14,
+   "u_peak": 8.975702045928482,
+   "T": 2.22
+  },
+  "split": "val"
+ },
+ {
+  "input": "I am tuning a PID controller for DC motor position control (QUBE-Servo 3 with inertia disc). Requirements: settle within 1.00 s with at most 15% overshoot, no more than 2 oscillation cycles, at most 2% error at the end and control ripple of at most 0.5%. Gains are Kp=14.57, Ki=18.102, Kd=0.214. The step response shows 22% overshoot, rise time 28 ms, control signal at its limit for 38 ms (1% of the recording), error at the end of the recording 0.0%, 2% settling time 242 ms, control-signal ripple 0.2% of full scale, oscillates 2 times. What is wrong?",
+  "output": "Diagnosis: Kp too high (oscillatory).\nEvidence: overshoot 22% against a 15% limit.\nFix: Reduce Kp by about half, or increase Kd to add damping.\nThis is a learning aid; check with your instructor if unsure.",
+  "spec": {
+   "os_max": 15.0,
+   "ts_max": 1.0,
+   "sse_max": 2.0,
+   "osc_max": 2,
+   "rip_max": 0.5
+  },
+  "label": "kp_too_high",
+  "plant": "dc_motor",
+  "gains": {
+   "kp": 14.56963466610643,
+   "ki": 18.101906180761993,
+   "kd": 0.21351969030540774
+  },
+  "nominal_gains": {
+   "kp": 4.7789341410105175,
+   "ki": 18.101906180761993,
+   "kd": 0.21351969030540774
+  },
+  "u_limit": 10.0,
+  "u_required": 0.48287112284570377,
+  "violations": [
+   "overshoot"
+  ],
+  "metrics": {
+   "overshoot": 22.038027599280404,
+   "rise": 0.028000000000000004,
+   "settle": 0.242,
+   "sse": 0.03576745200651348,
+   "oscillations": 2.0,
+   "sat": 1.2658227848101267,
+   "sat_time": 0.038,
+   "ripple": 0.18208379753271123,
+   "u_peak": 10.0,
+   "T": 3.0
+  },
+  "split": "val"
+ },
+ {
+  "input": "System: a first-order process (like a motor speed loop or small thermal system)\nRequirements: settle within 210 ms with at most 15% overshoot, no more than 2 oscillation cycles, at most 2% error at the end and control ripple of at most 0.6%\nPID gains: Kp=16.789, Ki=90.231, Kd=0\nObserved: peak overshoot of 19%, rise time 12 ms, control signal at its limit for 18 ms (2% of the recording), control ripple 1.2%, 2% settling time 195 ms, error at the end of the recording 0.1%, 6 oscillation cycles\nDiagnose the tuning.",
+  "output": "Diagnosis: Kp too high (oscillatory).\nEvidence: overshoot 19% against a 15% limit; 6 oscillation cycles against a limit of 2; control ripple 1.2% against a 0.6% limit.\nFix: Reduce Kp by about half, or increase Kd to add damping.\nThis is a learning aid; check with your instructor if unsure.",
+  "spec": {
+   "os_max": 15.0,
+   "ts_max": 0.21,
+   "sse_max": 2.0,
+   "osc_max": 2,
+   "rip_max": 0.6
+  },
+  "label": "kp_too_high",
+  "plant": "first_order",
+  "gains": {
+   "kp": 16.789044712361367,
+   "ki": 90.2312233436984,
+   "kd": 0.0
+  },
+  "nominal_gains": {
+   "kp": 2.9272582393124567,
+   "ki": 90.2312233436984,
+   "kd": 0.0
+  },
+  "u_limit": 4.4434964618245845,
+  "u_required": 1.1926210072964674,
+  "violations": [
+   "oscillation",
+   "overshoot",
+   "ripple"
+  ],
+  "metrics": {
+   "overshoot": 19.089225243727263,
+   "rise": 0.011677387528182722,
+   "settle": 0.19517919154248264,
+   "sse": 0.054032996024724486,
+   "oscillations": 6.0,
+   "sat": 2.015355086372361,
+   "sat_time": 0.017516081292274083,
+   "ripple": 1.2248619521843427,
+   "u_peak": 4.4434964618245845,
+   "T": 0.868297172631301
+  },
+  "split": "val"
+ },
+ {
+  "input": "Plant: a second-order system (like a mass-spring-damper).\nRequirements: overshoot at most 15%, settling time at most 1.20 s, at most 2 oscillation cycles, error at most 2% at the end, control ripple at most 4.1%.\nGains: Kp=13.821, Ki=19.414, Kd=0.233.\nStep response: peak overshoot of 18%, rise time 64 ms, settling time 929 ms, error at the end of the recording 0.1%, control-signal ripple 1.8% of full scale, control signal at its limit for 58 ms (2% of the recording), oscillates once.",
+  "output": "Diagnosis: Kp too high (oscillatory).\nEvidence: overshoot 18% against a 15% limit.\nFix: Reduce Kp by about half, or increase Kd to add damping.\nThis is a learning aid; check with your instructor if unsure.",
+  "spec": {
+   "os_max": 15.0,
+   "ts_max": 1.2,
+   "sse_max": 2.0,
+   "osc_max": 2,
+   "rip_max": 4.1
+  },
+  "label": "kp_too_high",
+  "plant": "second_order",
+  "gains": {
+   "kp": 13.820795352343435,
+   "ki": 19.414069380124822,
+   "kd": 0.23309085338180616
+  },
+  "nominal_gains": {
+   "kp": 3.3079394410473015,
+   "ki": 19.414069380124822,
+   "kd": 0.23309085338180616
+  },
+  "u_limit": 8.038944401323318,
+  "u_required": 1.9950982651531037,
+  "violations": [
+   "overshoot"
+  ],
+  "metrics": {
+   "overshoot": 17.98466081646093,
+   "rise": 0.06421722268325428,
+   "settle": 0.9291429406983351,
+   "sse": 0.08094064238339653,
+   "oscillations": 1.0,
+   "sat": 1.615598885793872,
+   "sat_time": 0.05819685805669918,
+   "ripple": 1.8454207641794254,
+   "u_peak": 8.038944401323318,
+   "T": 3.6001780466799422
+  },
+  "split": "val"
+ },
+ {
+  "input": "I am tuning a PID controller for DC motor position control (QUBE-Servo 3 with inertia disc). Requirements: overshoot at most 15%, settling time at most 630 ms, at most 2 oscillation cycles, error at most 2% at the end, control ripple at most 0.4%. Gains are Kp=18.012, Ki=49.154, Kd=0.221. The step response shows peak overshoot of 35%, 10-90% rise time 14 ms, control signal at its limit for 8 ms (0% of the recording), 2% settling time 346 ms, 0.0% error left at the end of the recording, control-signal ripple 0.4% of full scale, 5 oscillation cycles. What is wrong?",
+  "output": "Diagnosis: Kp too high (oscillatory).\nEvidence: overshoot 35% against a 15% limit; 5 oscillation cycles against a limit of 2.\nFix: Reduce Kp by about half, or increase Kd to add damping.\nThis is a learning aid; check with your instructor if unsure.",
+  "spec": {
+   "os_max": 15.0,
+   "ts_max": 0.63,
+   "sse_max": 2.0,
+   "osc_max": 2,
+   "rip_max": 0.4
+  },
+  "label": "kp_too_high",
+  "plant": "dc_motor",
+  "gains": {
+   "kp": 18.0122168707233,
+   "ki": 49.154181426398466,
+   "kd": 0.22057180173287466
+  },
+  "nominal_gains": {
+   "kp": 6.827569108175406,
+   "ki": 49.154181426398466,
+   "kd": 0.22057180173287466
+  },
+  "u_limit": 10.0,
+  "u_required": 0.3252549316366289,
+  "violations": [
+   "oscillation",
+   "overshoot"
+  ],
+  "metrics": {
+   "overshoot": 35.2037942653063,
+   "rise": 0.014,
+   "settle": 0.34600000000000003,
+   "sse": 0.0037041734377385588,
+   "oscillations": 5.0,
+   "sat": 0.42283298097251587,
+   "sat_time": 0.008,
+   "ripple": 0.3597226855202958,
+   "u_peak": 10.0,
+   "T": 1.8900000000000001
+  },
+  "split": "val"
+ },
+ {
+  "input": "A first-order process (like a motor speed loop or small thermal system) under PID control (Kp=11.67, Ki=53.776, Kd=0). Requirements: overshoot at most 15%, settling time at most 170 ms, at most 2 oscillation cycles, error at most 2% at the end, control ripple at most 1.0%. Measured step response: peak overshoot of 13%, rise time 11 ms, 3 oscillation cycles, control signal at its limit for 15 ms (2% of the recording), 2% settling time 63 ms, control ripple 2.7%, 0.0% error left at the end of the recording.",
+  "output": "Diagnosis: Kp too high (oscillatory).\nEvidence: 3 oscillation cycles against a limit of 2; control ripple 2.7% against a 1.0% limit.\nFix: Reduce Kp by about half, or increase Kd to add damping.\nThis is a learning aid; check with your instructor if unsure.",
+  "spec": {
+   "os_max": 15.0,
+   "ts_max": 0.17,
+   "sse_max": 2.0,
+   "osc_max": 2,
+   "rip_max": 1.0
+  },
+  "label": "kp_too_high",
+  "plant": "first_order",
+  "gains": {
+   "kp": 11.669924944749997,
+   "ki": 53.77562287638464,
+   "kd": 0.0
+  },
+  "nominal_gains": {
+   "kp": 1.5270153407201605,
+   "ki": 53.77562287638464,
+   "kd": 0.0
+  },
+  "u_limit": 4.177687460110706,
+  "u_required": 0.7616253252283088,
+  "violations": [
+   "oscillation",
+   "ripple"
+  ],
+  "metrics": {
+   "overshoot": 12.849755919479774,
+   "rise": 0.0113280841293292,
+   "settle": 0.06293380071849557,
+   "sse": 0.048394277704031145,
+   "oscillations": 3.0,
+   "sat": 2.1505376344086025,
+   "sat_time": 0.015104112172438936,
+   "ripple": 2.654716053262408,
+   "u_peak": 4.177687460110706,
+   "T": 0.7010825400040406
+  },
+  "split": "val"
+ },
+ {
+  "input": "A second-order system (like a mass-spring-damper) under PID control (Kp=3.296, Ki=0.899, Kd=0.376). Requirements: settle within 8.70 s with at most 15% overshoot, no more than 2 oscillation cycles, at most 2% error at the end and control ripple of at most 4.5%. Measured step response: peak overshoot of 18%, rise time 413 ms, 2% settling time 6.93 s, oscillates once, control ripple 2.2%, actuator saturated for 369 ms (1% of the recording), 0.0% error left at the end of the recording.",
+  "output": "Diagnosis: Kp too high (oscillatory).\nEvidence: overshoot 18% against a 15% limit.\nFix: Reduce Kp by about half, or increase Kd to add damping.\nThis is a learning aid; check with your instructor if unsure.",
+  "spec": {
+   "os_max": 15.0,
+   "ts_max": 8.7,
+   "sse_max": 2.0,
+   "osc_max": 2,
+   "rip_max": 4.5
+  },
+  "label": "kp_too_high",
+  "plant": "second_order",
+  "gains": {
+   "kp": 3.2962099096542197,
+   "ki": 0.8987726983490656,
+   "kd": 0.3760010367866212
+  },
+  "nominal_gains": {
+   "kp": 0.7573571914378906,
+   "ki": 0.8987726983490656,
+   "kd": 0.3760010367866212
+  },
+  "u_limit": 2.5206361069685776,
+  "u_required": 0.8202689306310107,
+  "violations": [
+   "overshoot"
+  ],
+  "metrics": {
+   "overshoot": 18.425085100759418,
+   "rise": 0.4129535392229038,
+   "settle": 6.933272579584543,
+   "sse": 0.024879230078003994,
+   "oscillations": 1.0,
+   "sat": 1.4148980441115273,
+   "sat_time": 0.3694847456204929,
+   "ripple": 2.1576734822232035,
+   "u_peak": 2.5206361069685776,
+   "T": 26.10301055824776
+  },
+  "split": "val"
+ },
+ {
+  "input": "Plant: DC motor position control (QUBE-Servo 3 with inertia disc).\nRequirements: settle within 850 ms with at most 15% overshoot, no more than 2 oscillation cycles, at most 2% error at the end and control ripple of at most 0.8%.\nGains: Kp=21.179, Ki=35.324, Kd=0.251.\nStep response: overshoot 33%, rise time 24 ms, error at the end of the recording 0.1%, oscillates 3 times, control signal at its limit for 64 ms (3% of the recording), control ripple 0.3%, 2% settling time 452 ms.",
+  "output": "Diagnosis: Kp too high (oscillatory).\nEvidence: overshoot 33% against a 15% limit; 3 oscillation cycles against a limit of 2.\nFix: Reduce Kp by about half, or increase Kd to add damping.\nThis is a learning aid; check with your instructor if unsure.",
+  "spec": {
+   "os_max": 15.0,
+   "ts_max": 0.85,
+   "sse_max": 2.0,
+   "osc_max": 2,
+   "rip_max": 0.8
+  },
+  "label": "kp_too_high",
+  "plant": "dc_motor",
+  "gains": {
+   "kp": 21.17901808730516,
+   "ki": 35.32397908659712,
+   "kd": 0.250719164431418
+  },
+  "nominal_gains": {
+   "kp": 6.99905906910916,
+   "ki": 35.32397908659712,
+   "kd": 0.250719164431418
+  },
+  "u_limit": 10.0,
+  "u_required": 0.16492106388744132,
+  "violations": [
+   "oscillation",
+   "overshoot"
+  ],
+  "metrics": {
+   "overshoot": 32.5676729003473,
+   "rise": 0.024,
+   "settle": 0.452,
+   "sse": 0.06218185394817154,
+   "oscillations": 3.0,
+   "sat": 2.507836990595611,
+   "sat_time": 0.064,
+   "ripple": 0.30476010160485106,
+   "u_peak": 10.0,
+   "T": 2.5500000000000003
+  },
+  "split": "val"
+ },
+ {
+  "input": "I am tuning a PID controller for a first-order process (like a motor speed loop or small thermal system). Requirements: settle within 490 ms with at most 15% overshoot, no more than 2 oscillation cycles, at most 2% error at the end and control ripple of at most 1.0%. Gains are Kp=7.849, Ki=14.926, Kd=0. The step response shows peak overshoot of 12%, 10-90% rise time 33 ms, oscillates 24 times, control-signal ripple 2.5% of full scale, settling time 481 ms, actuator saturated for 43 ms (3% of the recording), error at the end of the recording 0.0%. What is wrong?",
+  "output": "Diagnosis: Kp too high (oscillatory).\nEvidence: 24 oscillation cycles against a limit of 2; control ripple 2.5% against a 1.0% limit.\nFix: Reduce Kp by about half, or increase Kd to add damping.\nThis is a learning aid; check with your instructor if unsure.",
+  "spec": {
+   "os_max": 15.0,
+   "ts_max": 0.49,
+   "sse_max": 2.0,
+   "osc_max": 2,
+   "rip_max": 1.0
+  },
+  "label": "kp_too_high",
+  "plant": "first_order",
+  "gains": {
+   "kp": 7.848649488815991,
+   "ki": 14.925591663244552,
+   "kd": 0.0
+  },
+  "nominal_gains": {
+   "kp": 1.095054929577468,
+   "ki": 14.925591663244552,
+   "kd": 0.0
+  },
+  "u_limit": 1.201469845133983,
+  "u_required": 0.35214367948400926,
+  "violations": [
+   "oscillation",
+   "ripple"
+  ],
+  "metrics": {
+   "overshoot": 11.524511519590746,
+   "rise": 0.0332586993342148,
+   "settle": 0.481272943306873,
+   "sse": 0.016408277144598964,
+   "oscillations": 24.0,
+   "sat": 2.588235294117647,
+   "sat_time": 0.04304066972663092,
+   "ripple": 2.514103430665161,
+   "u_peak": 1.201469845133983,
+   "T": 1.6609785726322568
+  },
+  "split": "val"
+ },
+ {
+  "input": "System: a second-order system (like a mass-spring-damper)\nRequirements: settle within 630 ms with at most 15% overshoot, no more than 2 oscillation cycles, at most 2% error at the end and control ripple of at most 5.3%\nPID gains: Kp=15.349, Ki=24.022, Kd=0.063\nObserved: 23% overshoot, rise time 33 ms, actuator saturated for 41 ms (2% of the recording), 2% settling time 198 ms, oscillates 3 times, error at the end of the recording 0.1%, control-signal ripple 3.3% of full scale\nDiagnose the tuning.",
+  "output": "Diagnosis: Kp too high (oscillatory).\nEvidence: overshoot 23% against a 15% limit; 3 oscillation cycles against a limit of 2.\nFix: Reduce Kp by about half, or increase Kd to add damping.\nThis is a learning aid; check with your instructor if unsure.",
+  "spec": {
+   "os_max": 15.0,
+   "ts_max": 0.63,
+   "sse_max": 2.0,
+   "osc_max": 2,
+   "rip_max": 5.3
+  },
+  "label": "kp_too_high",
+  "plant": "second_order",
+  "gains": {
+   "kp": 15.34871646801427,
+   "ki": 24.0216842959131,
+   "kd": 0.06312569605037023
+  },
+  "nominal_gains": {
+   "kp": 2.4649973081703007,
+   "ki": 24.0216842959131,
+   "kd": 0.06312569605037023
+  },
+  "u_limit": 4.311458599500168,
+  "u_required": 0.8736292166503283,
+  "violations": [
+   "oscillation",
+   "overshoot"
+  ],
+  "metrics": {
+   "overshoot": 22.535877862537163,
+   "rise": 0.032649360262282656,
+   "settle": 0.19807278559118147,
+   "sse": 0.05739014851752934,
+   "oscillations": 3.0,
+   "sat": 2.1488871834228704,
+   "sat_time": 0.04063031499306286,
+   "ripple": 3.337961571925981,
+   "u_peak": 4.311458599500168,
+   "T": 1.8900351885165851
+  },
+  "split": "val"
+ },
+ {
+  "input": "I am tuning a PID controller for DC motor position control (QUBE-Servo 3 with inertia disc). Requirements: settle within 1.10 s with at most 15% overshoot, no more than 2 oscillation cycles, at most 2% error at the end and control ripple of at most 0.6%. Gains are Kp=19.359, Ki=18.851, Kd=0.24. The step response shows 28% overshoot, 10-90% rise time 28 ms, oscillates 3 times, 2% settling time 296 ms, 0.0% error left at the end of the recording, control ripple 0.3%, control signal at its limit for 52 ms (2% of the recording). What is wrong?",
+  "output": "Diagnosis: Kp too high (oscillatory).\nEvidence: overshoot 28% against a 15% limit; 3 oscillation cycles against a limit of 2.\nFix: Reduce Kp by about half, or increase Kd to add damping.\nThis is a learning aid; check with your instructor if unsure.",
+  "spec": {
+   "os_max": 15.0,
+   "ts_max": 1.1,
+   "sse_max": 2.0,
+   "osc_max": 2,
+   "rip_max": 0.6
+  },
+  "label": "kp_too_high",
+  "plant": "dc_motor",
+  "gains": {
+   "kp": 19.35936284745968,
+   "ki": 18.85119194132438,
+   "kd": 0.2395756476027993
+  },
+  "nominal_gains": {
+   "kp": 5.044013278008841,
+   "ki": 18.85119194132438,
+   "kd": 0.2395756476027993
+  },
+  "u_limit": 10.0,
+  "u_required": 0.3741431370010476,
+  "violations": [
+   "oscillation",
+   "overshoot"
+  ],
+  "metrics": {
+   "overshoot": 27.562989538044175,
+   "rise": 0.028000000000000004,
+   "settle": 0.296,
+   "sse": 0.02853819875830921,
+   "oscillations": 3.0,
+   "sat": 1.574803149606299,
+   "sat_time": 0.052000000000000005,
+   "ripple": 0.25639663153838266,
+   "u_peak": 10.0,
+   "T": 3.3000000000000003
+  },
+  "split": "val"
+ },
+ {
+  "input": "DC motor position control (QUBE-Servo 3 with inertia disc) under PID control (Kp=0.456, Ki=1.748, Kd=0.017). Requirements: settle within 1.20 s with at most 10% overshoot, no more than 2 oscillation cycles, at most 2% error at the end and control ripple of at most 0.3%. Measured step response: peak overshoot of 6%, 10-90% rise time 304 ms, actuator never at its limit, no oscillation, error at the end of the recording 0.5%, 2% settling time 1.27 s, control ripple 0.0%.",
+  "output": "Diagnosis: Overall gain too low (sluggish).\nEvidence: settles at 1.27 s against a 1.20 s target; slow rise with little overshoot.\nFix: Raise Kp, Ki and Kd together by the same factor (try about 2 times), keeping their ratios, and re-test against the settling-time target.\nThis is a learning aid; check with your instructor if unsure.",
+  "spec": {
+   "os_max": 10.0,
+   "ts_max": 1.2,
+   "sse_max": 2.0,
+   "osc_max": 2,
+   "rip_max": 0.3
+  },
+  "label": "gain_too_low",
+  "plant": "dc_motor",
+  "gains": {
+   "kp": 0.45580888776307676,
+   "ki": 1.7480388153272566,
+   "kd": 0.017373576584059483
+  },
+  "nominal_gains": {
+   "kp": 3.5771464607508863,
+   "ki": 13.718448738878665,
+   "kd": 0.1363462399630883
+  },
+  "u_limit": 10.0,
+  "u_required": 0.4164860442996008,
+  "violations": [
+   "settling"
+  ],
+  "metrics": {
+   "overshoot": 6.3468882969507545,
+   "rise": 0.30400000000000005,
+   "settle": 1.274,
+   "sse": 0.4854536886075431,
+   "oscillations": 0.0,
+   "sat": 0.0,
+   "sat_time": 0.0,
+   "ripple": 0.0,
+   "u_peak": 0.5979737780776702,
+   "T": 3.6
+  },
+  "split": "val"
+ },
+ {
+  "input": "A first-order process (like a motor speed loop or small thermal system) under PID control (Kp=0.218, Ki=2.721, Kd=0). Requirements: settle within 500 ms with at most 10% overshoot, no more than 2 oscillation cycles, at most 2% error at the end and control ripple of at most 1.0%. Measured step response: peak overshoot of 4%, 10-90% rise time 196 ms, 2% settling time 604 ms, 0.0% error left at the end of the recording, actuator never at its limit, control ripple 0.1%, no oscillation.",
+  "output": "Diagnosis: Overall gain too low (sluggish).\nEvidence: settles at 604 ms against a 500 ms target; slow rise with little overshoot.\nFix: Raise Kp, Ki and Kd together by the same factor (try about 2 times), keeping their ratios, and re-test against the settling-time target.\nThis is a learning aid; check with your instructor if unsure.",
+  "spec": {
+   "os_max": 10.0,
+   "ts_max": 0.5,
+   "sse_max": 2.0,
+   "osc_max": 2,
+   "rip_max": 1.0
+  },
+  "label": "gain_too_low",
+  "plant": "first_order",
+  "gains": {
+   "kp": 0.21785273362273433,
+   "ki": 2.721403569347107,
+   "kd": 0.0
+  },
+  "nominal_gains": {
+   "kp": 0.6751505975841711,
+   "ki": 8.433941661224376,
+   "kd": 0.0
+  },
+  "u_limit": 1.3611649824115148,
+  "u_required": 0.49010042722801145,
+  "violations": [
+   "settling"
+  ],
+  "metrics": {
+   "overshoot": 4.136165468576656,
+   "rise": 0.19640438708115823,
+   "settle": 0.6044890580164537,
+   "sse": 0.018888934262164765,
+   "oscillations": 0.0,
+   "sat": 0.0,
+   "sat_time": 0.0,
+   "ripple": 0.109885442504015,
+   "u_peak": 0.5658413885882173,
+   "T": 1.9618615998440139
+  },
+  "split": "val"
+ },
+ {
+  "input": "A second-order system (like a mass-spring-damper) under PID control (Kp=0.351, Ki=0.378, Kd=0.111). Requirements: overshoot at most 15%, settling time at most 5.40 s, at most 2 oscillation cycles, error at most 2% at the end, control ripple at most 7.2%. Measured step response: overshoot 0%, 10-90% rise time 3.66 s, 2% settling time 6.98 s, no oscillation, error at the end of the recording 0.0%, control ripple 0.4%, actuator never at its limit.",
+  "output": "Diagnosis: Overall gain too low (sluggish).\nEvidence: settles at 6.98 s against a 5.40 s target; slow rise with little overshoot.\nFix: Raise Kp, Ki and Kd together by the same factor (try about 2 times), keeping their ratios, and re-test against the settling-time target.\nThis is a learning aid; check with your instructor if unsure.",
+  "spec": {
+   "os_max": 15.0,
+   "ts_max": 5.4,
+   "sse_max": 2.0,
+   "osc_max": 2,
+   "rip_max": 7.2
+  },
+  "label": "gain_too_low",
+  "plant": "second_order",
+  "gains": {
+   "kp": 0.3509802258687616,
+   "ki": 0.37793918944942145,
+   "kd": 0.11065439037878884
+  },
+  "nominal_gains": {
+   "kp": 1.8158476793031144,
+   "ki": 1.9553238316509762,
+   "kd": 0.572486719092707
+  },
+  "u_limit": 2.3199133851437206,
+  "u_required": 0.7041829225760823,
+  "violations": [
+   "settling"
+  ],
+  "metrics": {
+   "overshoot": 0.22402601710238743,
+   "rise": 3.6590867917379994,
+   "settle": 6.982552647321059,
+   "sse": 0.02597351375538838,
+   "oscillations": 0.0,
+   "sat": 0.0,
+   "sat_time": 0.0,
+   "ripple": 0.43766961366320867,
+   "u_peak": 0.7246883290524222,
+   "T": 16.208035453336105
+  },
+  "split": "val"
+ },
+ {
+  "input": "System: DC motor position control (QUBE-Servo 3 with inertia disc)\nRequirements: settle within 900 ms with at most 10% overshoot, no more than 2 oscillation cycles, at most 2% error at the end and control ripple of at most 0.3%\nPID gains: Kp=0.473, Ki=1.66, Kd=0.019\nObserved: overshoot 5%, 10-90% rise time 320 ms, settling time 1.69 s, control ripple 0.0%, actuator never at its limit, error at the end of the recording 0.5%, no oscillation\nDiagnose the tuning.",
+  "output": "Diagnosis: Overall gain too low (sluggish).\nEvidence: settles at 1.69 s against a 900 ms target; slow rise with little overshoot.\nFix: Raise Kp, Ki and Kd together by the same factor (try about 2 times), keeping their ratios, and re-test against the settling-time target.\nThis is a learning aid; check with your instructor if unsure.",
+  "spec": {
+   "os_max": 10.0,
+   "ts_max": 0.9,
+   "sse_max": 2.0,
+   "osc_max": 2,
+   "rip_max": 0.3
+  },
+  "label": "gain_too_low",
+  "plant": "dc_motor",
+  "gains": {
+   "kp": 0.47314317993422006,
+   "ki": 1.6597437488702715,
+   "kd": 0.019159208147179682
+  },
+  "nominal_gains": {
+   "kp": 3.8281135037800467,
+   "ki": 13.428678098558121,
+   "kd": 0.15501359110818846
+  },
+  "u_limit": 10.0,
+  "u_required": 0.3506626779082873,
+  "violations": [
+   "settling"
+  ],
+  "metrics": {
+   "overshoot": 4.58360431701216,
+   "rise": 0.32000000000000006,
+   "settle": 1.694,
+   "sse": 0.4687437176261286,
+   "oscillations": 0.0,
+   "sat": 0.0,
+   "sat_time": 0.0,
+   "ripple": 0.006897494301233737,
+   "u_peak": 0.4632345285946274,
+   "T": 2.7
+  },
+  "split": "val"
+ },
+ {
+  "input": "A first-order process (like a motor speed loop or small thermal system) under PID control (Kp=0.225, Ki=1.498, Kd=0). Requirements: overshoot at most 15%, settling time at most 1.10 s, at most 2 oscillation cycles, error at most 2% at the end, control ripple at most 0.9%. Measured step response: peak overshoot of 8%, rise time 504 ms, actuator never at its limit, control ripple 0.1%, settling time 1.66 s, error at the end of the recording 0.0%, 1 oscillation cycle.",
+  "output": "Diagnosis: Overall gain too low (sluggish).\nEvidence: settles at 1.66 s against a 1.10 s target; slow rise with little overshoot.\nFix: Raise Kp, Ki and Kd together by the same factor (try about 2 times), keeping their ratios, and re-test against the settling-time target.\nThis is a learning aid; check with your instructor if unsure.",
+  "spec": {
+   "os_max": 15.0,
+   "ts_max": 1.1,
+   "sse_max": 2.0,
+   "osc_max": 2,
+   "rip_max": 0.9
+  },
+  "label": "gain_too_low",
+  "plant": "first_order",
+  "gains": {
+   "kp": 0.22511937829796166,
+   "ki": 1.4979756349493125,
+   "kd": 0.0
+  },
+  "nominal_gains": {
+   "kp": 1.0777566548069486,
+   "ki": 7.171542590031681,
+   "kd": 0.0
+  },
+  "u_limit": 1.8438158787792334,
+  "u_required": 0.5298829324054048,
+  "violations": [
+   "settling"
+  ],
+  "metrics": {
+   "overshoot": 8.050071003377639,
+   "rise": 0.5044970751075707,
+   "settle": 1.6613610576818274,
+   "sse": 0.03910328805933799,
+   "oscillations": 1.0,
+   "sat": 0.0,
+   "sat_time": 0.0,
+   "ripple": 0.06865533521606976,
+   "u_peak": 0.6336221819749603,
+   "T": 3.905503219367228
+  },
+  "split": "val"
+ },
+ {
+  "input": "System: a second-order system (like a mass-spring-damper)\nRequirements: overshoot at most 10%, settling time at most 4.00 s, at most 2 oscillation cycles, error at most 2% at the end, control ripple at most 6.6%\nPID gains: Kp=0.313, Ki=0.456, Kd=0.043\nObserved: 0% overshoot, 10-90% rise time 3.20 s, 0.1% error left at the end of the recording, control ripple 0.3%, no oscillation, settling time 5.87 s, actuator never at its limit\nDiagnose the tuning.",
+  "output": "Diagnosis: Overall gain too low (sluggish).\nEvidence: settles at 5.87 s against a 4.00 s target; slow rise with little overshoot.\nFix: Raise Kp, Ki and Kd together by the same factor (try about 2 times), keeping their ratios, and re-test against the settling-time target.\nThis is a learning aid; check with your instructor if unsure.",
+  "spec": {
+   "os_max": 10.0,
+   "ts_max": 4.0,
+   "sse_max": 2.0,
+   "osc_max": 2,
+   "rip_max": 6.6
+  },
+  "label": "gain_too_low",
+  "plant": "second_order",
+  "gains": {
+   "kp": 0.31305290653123125,
+   "ki": 0.4555239011607432,
+   "kd": 0.043088598066400925
+  },
+  "nominal_gains": {
+   "kp": 2.3569656538220114,
+   "ki": 3.429625367250097,
+   "kd": 0.3244127225623337
+  },
+  "u_limit": 4.596685343163435,
+  "u_required": 1.041024643441518,
+  "violations": [
+   "settling"
+  ],
+  "metrics": {
+   "overshoot": 0.17737321927017127,
+   "rise": 3.2007439533209876,
+   "settle": 5.868703288939113,
+   "sse": 0.06423312009512454,
+   "oscillations": 0.0,
+   "sat": 0.0,
+   "sat_time": 0.0,
+   "ripple": 0.2827284836120687,
+   "u_peak": 1.0669068218359186,
+   "T": 12.003798886729657
+  },
+  "split": "val"
+ },
+ {
+  "input": "Plant: a first-order process (like a motor speed loop or small thermal system).\nRequirements: overshoot at most 15%, settling time at most 7.30 s, at most 2 oscillation cycles, error at most 2% at the end, control ripple at most 1.1%.\nGains: Kp=0.458, Ki=0.413, Kd=0.\nStep response: peak overshoot of 2%, 10-90% rise time 6.15 s, actuator never at its limit, 2% settling time 9.28 s, control ripple 0.1%, error at the end of the recording 0.0%, no oscillation.",
+  "output": "Diagnosis: Overall gain too low (sluggish).\nEvidence: settles at 9.28 s against a 7.30 s target; slow rise with little overshoot.\nFix: Raise Kp, Ki and Kd together by the same factor (try about 2 times), keeping their ratios, and re-test against the settling-time target.\nThis is a learning aid; check with your instructor if unsure.",
+  "spec": {
+   "os_max": 15.0,
+   "ts_max": 7.3,
+   "sse_max": 2.0,
+   "osc_max": 2,
+   "rip_max": 1.1
+  },
+  "label": "gain_too_low",
+  "plant": "first_order",
+  "gains": {
+   "kp": 0.4583428211611029,
+   "ki": 0.412739169754573,
+   "kd": 0.0
+  },
+  "nominal_gains": {
+   "kp": 3.2351408118874776,
+   "ki": 2.913254601337454,
+   "kd": 0.0
+  },
+  "u_limit": 7.740264137815553,
+  "u_required": 3.1289369199003327,
+  "violations": [
+   "settling"
+  ],
+  "metrics": {
+   "overshoot": 1.8927120394523471,
+   "rise": 6.154256757426041,
+   "settle": 9.277312425373585,
+   "sse": 0.04377104982733975,
+   "oscillations": 0.0,
+   "sat": 0.0,
+   "sat_time": 0.0,
+   "ripple": 0.05149426693676492,
+   "u_peak": 3.2171000104696192,
+   "T": 28.79641035004573
+  },
+  "split": "val"
+ },
+ {
+  "input": "I am tuning a PID controller for a second-order system (like a mass-spring-damper). Requirements: settle within 2.40 s with at most 10% overshoot, no more than 2 oscillation cycles, at most 2% error at the end and control ripple of at most 6.7%. Gains are Kp=0.54, Ki=0.374, Kd=0.092. The step response shows peak overshoot of 0%, rise time 2.58 s, actuator never at its limit, settling time 4.71 s, no oscillation, error at the end of the recording 0.0%, control ripple 0.8%. What is wrong?",
+  "output": "Diagnosis: Overall gain too low (sluggish).\nEvidence: settles at 4.71 s against a 2.40 s target; slow rise with little overshoot.\nFix: Raise Kp, Ki and Kd together by the same factor (try about 2 times), keeping their ratios, and re-test against the settling-time target.\nThis is a learning aid; check with your instructor if unsure.",
+  "spec": {
+   "os_max": 10.0,
+   "ts_max": 2.4,
+   "sse_max": 2.0,
+   "osc_max": 2,
+   "rip_max": 6.7
+  },
+  "label": "gain_too_low",
+  "plant": "second_order",
+  "gains": {
+   "kp": 0.5401544731525298,
+   "ki": 0.37439778130909074,
+   "kd": 0.09186787650496075
+  },
+  "nominal_gains": {
+   "kp": 1.333928315200039,
+   "ki": 0.9245869958670895,
+   "kd": 0.22687058576420047
+  },
+  "u_limit": 2.538108786384713,
+  "u_required": 1.0161685279864183,
+  "violations": [
+   "settling"
+  ],
+  "metrics": {
+   "overshoot": 0.3355964319748174,
+   "rise": 2.582173525147198,
+   "settle": 4.714918113955485,
+   "sse": 0.015741628876592455,
+   "oscillations": 0.0,
+   "sat": 0.0,
+   "sat_time": 0.0,
+   "ripple": 0.821930272099582,
+   "u_peak": 1.1392303506885624,
+   "T": 13.335782256456415
+  },
+  "split": "val"
+ },
+ {
+  "input": "DC motor position control (QUBE-Servo 3 with inertia disc) under PID control (Kp=5.955, Ki=0.46, Kd=0.233). Requirements: settle within 880 ms with at most 15% overshoot, no more than 2 oscillation cycles, at most 2% error at the end and control ripple of at most 0.5%. Measured step response: 0% overshoot, rise time 114 ms, actuator never at its limit, did not settle within the 2.64 s recording, no oscillation, control-signal ripple 0.1% of full scale, 3.9% error left at the end of the recording.",
+  "output": "Diagnosis: Ki too low (remaining error).\nEvidence: not settled after the 2.64 s recording against a 880 ms target; 3.9% error left at the end of the recording against a 2% limit.\nFix: Increase Ki so the integral removes the remaining error.\nThis is a learning aid; check with your instructor if unsure.",
+  "spec": {
+   "os_max": 15.0,
+   "ts_max": 0.88,
+   "sse_max": 2.0,
+   "osc_max": 2,
+   "rip_max": 0.5
+  },
+  "label": "ki_too_low",
+  "plant": "dc_motor",
+  "gains": {
+   "kp": 5.954677458210443,
+   "ki": 0.4597649932197754,
+   "kd": 0.23336966470584264
+  },
+  "nominal_gains": {
+   "kp": 5.954677458210443,
+   "ki": 29.710880961368286,
+   "kd": 0.23336966470584264
+  },
+  "u_limit": 10.0,
+  "u_required": 0.40910535114162816,
+  "violations": [
+   "end_error",
+   "settling"
+  ],
+  "metrics": {
+   "overshoot": 0.0,
+   "rise": 0.114,
+   "settle": null,
+   "sse": 3.8531492109520977,
+   "oscillations": 0.0,
+   "sat": 0.0,
+   "sat_time": 0.0,
+   "ripple": 0.12282412686768851,
+   "u_peak": 8.443519493188012,
+   "T": 2.64
+  },
+  "split": "val"
+ },
+ {
+  "input": "A first-order process (like a motor speed loop or small thermal system) under PID control (Kp=0.646, Ki=0.107, Kd=0). Requirements: overshoot at most 15%, settling time at most 420 ms, at most 2 oscillation cycles, error at most 2% at the end, control ripple at most 0.9%. Measured step response: peak overshoot of 0%, did not reach 90% of the target, error at the end of the recording 19.5%, did not settle within the 1.29 s recording, no oscillation, actuator never at its limit, control-signal ripple 0.3% of full scale.",
+  "output": "Diagnosis: Ki too low (remaining error).\nEvidence: not settled after the 1.29 s recording against a 420 ms target; 19.5% error left at the end of the recording against a 2% limit.\nFix: Increase Ki so the integral removes the remaining error.\nThis is a learning aid; check with your instructor if unsure.",
+  "spec": {
+   "os_max": 15.0,
+   "ts_max": 0.42,
+   "sse_max": 2.0,
+   "osc_max": 2,
+   "rip_max": 0.9
+  },
+  "label": "ki_too_low",
+  "plant": "first_order",
+  "gains": {
+   "kp": 0.6455249201226757,
+   "ki": 0.10678066626898416,
+   "kd": 0.0
+  },
+  "nominal_gains": {
+   "kp": 0.6455249201226757,
+   "ki": 13.347663303627497,
+   "kd": 0.0
+  },
+  "u_limit": 0.6771717970497677,
+  "u_required": 0.16669194367925894,
+  "violations": [
+   "end_error",
+   "settling"
+  ],
+  "metrics": {
+   "overshoot": 0.0,
+   "rise": null,
+   "settle": null,
+   "sse": 19.499886420924405,
+   "oscillations": 0.0,
+   "sat": 0.0,
+   "sat_time": 0.0,
+   "ripple": 0.34590252761774487,
+   "u_peak": 0.5291676079931728,
+   "T": 1.286155200951387
+  },
+  "split": "val"
+ },
+ {
+  "input": "System: a second-order system (like a mass-spring-damper)\nRequirements: settle within 3.30 s with at most 15% overshoot, no more than 2 oscillation cycles, at most 2% error at the end and control ripple of at most 7.7%\nPID gains: Kp=1.867, Ki=0.062, Kd=0.18\nObserved: 0% overshoot, did not reach 90% of the target, 20.7% error left at the end of the recording, actuator saturated for 53 ms (1% of the recording), no oscillation, did not settle within the 9.90 s recording, control-signal ripple 2.5% of full scale\nDiagnose the tuning.",
+  "output": "Diagnosis: Ki too low (remaining error).\nEvidence: not settled after the 9.90 s recording against a 3.30 s target; 20.7% error left at the end of the recording against a 2% limit.\nFix: Increase Ki so the integral removes the remaining error.\nThis is a learning aid; check with your instructor if unsure.",
+  "spec": {
+   "os_max": 15.0,
+   "ts_max": 3.3,
+   "sse_max": 2.0,
+   "osc_max": 2,
+   "rip_max": 7.7
+  },
+  "label": "ki_too_low",
+  "plant": "second_order",
+  "gains": {
+   "kp": 1.8665051526697836,
+   "ki": 0.06154956908736481,
+   "kd": 0.17981873613015933
+  },
+  "nominal_gains": {
+   "kp": 1.8665051526697836,
+   "ki": 2.2826969968219153,
+   "kd": 0.17981873613015933
+  },
+  "u_limit": 2.4904062222535845,
+  "u_required": 0.9072737406721886,
+  "violations": [
+   "end_error",
+   "settling"
+  ],
+  "metrics": {
+   "overshoot": 0.0,
+   "rise": null,
+   "settle": null,
+   "sse": 20.736809795609513,
+   "oscillations": 0.0,
+   "sat": 0.5345551737304315,
+   "sat_time": 0.052952329877963014,
+   "ripple": 2.5017650793784516,
+   "u_peak": 2.4904062222535845,
+   "T": 9.902085687179085
+  },
+  "split": "val"
+ },
+ {
+  "input": "Plant: DC motor position control (QUBE-Servo 3 with inertia disc).\nRequirements: overshoot at most 15%, settling time at most 1.70 s, at most 2 oscillation cycles, error at most 2% at the end, control ripple at most 0.3%.\nGains: Kp=2.741, Ki=0.214, Kd=0.165.\nStep response: 0% overshoot, rise time 206 ms, did not settle within the 5.10 s recording, control ripple 0.0%, 5.0% error left at the end of the recording, actuator never at its limit, no oscillation.",
+  "output": "Diagnosis: Ki too low (remaining error).\nEvidence: not settled after the 5.10 s recording against a 1.70 s target; 5.0% error left at the end of the recording against a 2% limit.\nFix: Increase Ki so the integral removes the remaining error.\nThis is a learning aid; check with your instructor if unsure.",
+  "spec": {
+   "os_max": 15.0,
+   "ts_max": 1.7,
+   "sse_max": 2.0,
+   "osc_max": 2,
+   "rip_max": 0.3
+  },
+  "label": "ki_too_low",
+  "plant": "dc_motor",
+  "gains": {
+   "kp": 2.7410534216140436,
+   "ki": 0.21350264325085705,
+   "kd": 0.16466533656346677
+  },
+  "nominal_gains": {
+   "kp": 2.7410534216140436,
+   "ki": 7.666536741579411,
+   "kd": 0.16466533656346677
+  },
+  "u_limit": 10.0,
+  "u_required": 0.22286274960952449,
+  "violations": [
+   "end_error",
+   "settling"
+  ],
+  "metrics": {
+   "overshoot": 0.0,
+   "rise": 0.20600000000000002,
+   "settle": null,
+   "sse": 5.021551187003297,
+   "oscillations": 0.0,
+   "sat": 0.0,
+   "sat_time": 0.0,
+   "ripple": 0.04986728819950535,
+   "u_peak": 3.002292259670682,
+   "T": 5.1000000000000005
+  },
+  "split": "val"
+ },
+ {
+  "input": "Plant: a first-order process (like a motor speed loop or small thermal system).\nRequirements: overshoot at most 15%, settling time at most 1.50 s, at most 2 oscillation cycles, error at most 2% at the end, control ripple at most 1.4%.\nGains: Kp=1.652, Ki=0.067, Kd=0.\nStep response: overshoot 0%, did not reach 90% of the target, 21.3% error left at the end of the recording, did not settle within the 5.78 s recording, no oscillation, actuator saturated for 43 ms (1% of the recording), control ripple 0.5%.",
+  "output": "Diagnosis: Ki too low (remaining error).\nEvidence: not settled after the 5.78 s recording against a 1.50 s target; 21.3% error left at the end of the recording against a 2% limit.\nFix: Increase Ki so the integral removes the remaining error.\nThis is a learning aid; check with your instructor if unsure.",
+  "spec": {
+   "os_max": 15.0,
+   "ts_max": 1.5,
+   "sse_max": 2.0,
+   "osc_max": 2,
+   "rip_max": 1.4
+  },
+  "label": "ki_too_low",
+  "plant": "first_order",
+  "gains": {
+   "kp": 1.651902761126253,
+   "ki": 0.06663544700425547,
+   "kd": 0.0
+  },
+  "nominal_gains": {
+   "kp": 1.651902761126253,
+   "ki": 5.7980517884184035,
+   "kd": 0.0
+  },
+  "u_limit": 2.1238361206195906,
+  "u_required": 0.7666663142745772,
+  "violations": [
+   "end_error",
+   "settling"
+  ],
+  "metrics": {
+   "overshoot": 0.0,
+   "rise": null,
+   "settle": null,
+   "sse": 21.282018461645855,
+   "oscillations": 0.0,
+   "sat": 0.7504690431519699,
+   "sat_time": 0.04348625482736011,
+   "ripple": 0.48022809492829155,
+   "u_peak": 2.1238361206195906,
+   "T": 5.783671892038895
+  },
+  "split": "val"
+ },
+ {
+  "input": "Plant: a second-order system (like a mass-spring-damper).\nRequirements: settle within 5.90 s with at most 10% overshoot, no more than 2 oscillation cycles, at most 2% error at the end and control ripple of at most 7.1%.\nGains: Kp=4.705, Ki=0.032, Kd=0.816.\nStep response: peak overshoot of 0%, did not reach 90% of the target, no oscillation, error at the end of the recording 14.3%, did not settle within the 17.70 s recording, control-signal ripple 2.5% of full scale, actuator saturated for 93 ms (1% of the recording).",
+  "output": "Diagnosis: Ki too low (remaining error).\nEvidence: not settled after the 17.70 s recording against a 5.90 s target; 14.3% error left at the end of the recording against a 2% limit.\nFix: Increase Ki so the integral removes the remaining error.\nThis is a learning aid; check with your instructor if unsure.",
+  "spec": {
+   "os_max": 10.0,
+   "ts_max": 5.9,
+   "sse_max": 2.0,
+   "osc_max": 2,
+   "rip_max": 7.1
+  },
+  "label": "ki_too_low",
+  "plant": "second_order",
+  "gains": {
+   "kp": 4.704747308330006,
+   "ki": 0.03189677232624212,
+   "kd": 0.8157284019126093
+  },
+  "nominal_gains": {
+   "kp": 4.704747308330006,
+   "ki": 3.1533227233245085,
+   "kd": 0.8157284019126093
+  },
+  "u_limit": 3.9174232362201624,
+  "u_required": 0.8141893308293426,
+  "violations": [
+   "end_error",
+   "settling"
+  ],
+  "metrics": {
+   "overshoot": 0.0,
+   "rise": null,
+   "settle": null,
+   "sse": 14.335621813493516,
+   "oscillations": 0.0,
+   "sat": 0.5256773150020219,
+   "sat_time": 0.09308712592324828,
+   "ripple": 2.509650819417107,
+   "u_peak": 3.9174232362201624,
+   "T": 17.700875021713056
+  },
+  "split": "val"
+ },
+ {
+  "input": "Plant: DC motor position control (QUBE-Servo 3 with inertia disc).\nRequirements: overshoot at most 15%, settling time at most 930 ms, at most 2 oscillation cycles, error at most 2% at the end, control ripple at most 0.3%.\nGains: Kp=4.493, Ki=0.393, Kd=0.179.\nStep response: overshoot 0%, 10-90% rise time 144 ms, 6.1% error left at the end of the recording, control ripple 0.1%, did not settle within the 2.79 s recording, actuator never at its limit, no oscillation.",
+  "output": "Diagnosis: Ki too low (remaining error).\nEvidence: not settled after the 2.79 s recording against a 930 ms target; 6.1% error left at the end of the recording against a 2% limit.\nFix: Increase Ki so the integral removes the remaining error.\nThis is a learning aid; check with your instructor if unsure.",
+  "spec": {
+   "os_max": 15.0,
+   "ts_max": 0.93,
+   "sse_max": 2.0,
+   "osc_max": 2,
+   "rip_max": 0.3
+  },
+  "label": "ki_too_low",
+  "plant": "dc_motor",
+  "gains": {
+   "kp": 4.493430975094279,
+   "ki": 0.3934034186881606,
+   "kd": 0.17852270234670264
+  },
+  "nominal_gains": {
+   "kp": 4.493430975094279,
+   "ki": 18.3313859924905,
+   "kd": 0.17852270234670264
+  },
+  "u_limit": 10.0,
+  "u_required": 0.28101165894638347,
+  "violations": [
+   "end_error",
+   "settling"
+  ],
+  "metrics": {
+   "overshoot": 0.0,
+   "rise": 0.14400000000000002,
+   "settle": null,
+   "sse": 6.137519517546243,
+   "oscillations": 0.0,
+   "sat": 0.0,
+   "sat_time": 0.0,
+   "ripple": 0.06449066758446034,
+   "u_peak": 3.6643809131514975,
+   "T": 2.79
+  },
+  "split": "val"
+ },
+ {
+  "input": "A first-order process (like a motor speed loop or small thermal system) under PID control (Kp=0.962, Ki=0.039, Kd=0). Requirements: settle within 4.20 s with at most 15% overshoot, no more than 2 oscillation cycles, at most 2% error at the end and control ripple of at most 1.2%. Measured step response: overshoot 0%, did not reach 90% of the target, error at the end of the recording 20.5%, did not settle within the 13.67 s recording, no oscillation, control-signal ripple 0.4% of full scale, actuator never at its limit.",
+  "output": "Diagnosis: Ki too low (remaining error).\nEvidence: not settled after the 13.67 s recording against a 4.20 s target; 20.5% error left at the end of the recording against a 2% limit.\nFix: Increase Ki so the integral removes the remaining error.\nThis is a learning aid; check with your instructor if unsure.",
+  "spec": {
+   "os_max": 15.0,
+   "ts_max": 4.2,
+   "sse_max": 2.0,
+   "osc_max": 2,
+   "rip_max": 1.2
+  },
+  "label": "ki_too_low",
+  "plant": "first_order",
+  "gains": {
+   "kp": 0.9622347080509783,
+   "ki": 0.03908596895139425,
+   "kd": 0.0
+  },
+  "nominal_gains": {
+   "kp": 0.9622347080509783,
+   "ki": 1.582133863087403,
+   "kd": 0.0
+  },
+  "u_limit": 1.2819917282258917,
+  "u_required": 0.5084440658672112,
+  "violations": [
+   "end_error",
+   "settling"
+  ],
+  "metrics": {
+   "overshoot": 0.0,
+   "rise": null,
+   "settle": null,
+   "sse": 20.514694964260496,
+   "oscillations": 0.0,
+   "sat": 0.0,
+   "sat_time": 0.0,
+   "ripple": 0.44032282219978885,
+   "u_peak": 1.2698691688088113,
+   "T": 13.672572647866811
+  },
+  "split": "val"
+ },
+ {
+  "input": "Plant: a second-order system (like a mass-spring-damper).\nRequirements: overshoot at most 15%, settling time at most 4.00 s, at most 2 oscillation cycles, error at most 2% at the end, control ripple at most 6.0%.\nGains: Kp=1.551, Ki=0.069, Kd=0.216.\nStep response: peak overshoot of 0%, 10-90% rise time 10.98 s, actuator never at its limit, 10.1% error left at the end of the recording, control ripple 1.8%, no oscillation, did not settle within the 12.00 s recording.",
+  "output": "Diagnosis: Ki too low (remaining error).\nEvidence: not settled after the 12.00 s recording against a 4.00 s target; 10.1% error left at the end of the recording against a 2% limit.\nFix: Increase Ki so the integral removes the remaining error.\nThis is a learning aid; check with your instructor if unsure.",
+  "spec": {
+   "os_max": 15.0,
+   "ts_max": 4.0,
+   "sse_max": 2.0,
+   "osc_max": 2,
+   "rip_max": 6.0
+  },
+  "label": "ki_too_low",
+  "plant": "second_order",
+  "gains": {
+   "kp": 1.5513328006655271,
+   "ki": 0.06881765181529226,
+   "kd": 0.21621687113465193
+  },
+  "nominal_gains": {
+   "kp": 1.5513328006655271,
+   "ki": 2.390312224197889,
+   "kd": 0.21621687113465193
+  },
+  "u_limit": 1.3814342902682006,
+  "u_required": 0.22594216715922769,
+  "violations": [
+   "end_error",
+   "settling"
+  ],
+  "metrics": {
+   "overshoot": 0.0,
+   "rise": 10.977211188131792,
+   "settle": null,
+   "sse": 10.134521364891766,
+   "oscillations": 0.0,
+   "sat": 0.0,
+   "sat_time": 0.0,
+   "ripple": 1.8417134624351068,
+   "u_peak": 1.1675607157458134,
+   "T": 12.000199061132912
+  },
+  "split": "val"
+ },
+ {
+  "input": "System: DC motor position control (QUBE-Servo 3 with inertia disc)\nRequirements: settle within 950 ms with at most 10% overshoot, no more than 2 oscillation cycles, at most 2% error at the end and control ripple of at most 0.6%\nPID gains: Kp=7.977, Ki=1.137, Kd=0.273\nObserved: peak overshoot of 0%, rise time 146 ms, error at the end of the recording 5.4%, control-signal ripple 0.1% of full scale, no oscillation, actuator never at its limit, did not settle within the 2.85 s recording\nDiagnose the tuning.",
+  "output": "Diagnosis: Ki too low (remaining error).\nEvidence: not settled after the 2.85 s recording against a 950 ms target; 5.4% error left at the end of the recording against a 2% limit.\nFix: Increase Ki so the integral removes the remaining error.\nThis is a learning aid; check with your instructor if unsure.",
+  "spec": {
+   "os_max": 10.0,
+   "ts_max": 0.95,
+   "sse_max": 2.0,
+   "osc_max": 2,
+   "rip_max": 0.6
+  },
+  "label": "ki_too_low",
+  "plant": "dc_motor",
+  "gains": {
+   "kp": 7.977064293374174,
+   "ki": 1.1372138559356277,
+   "kd": 0.27345435648159033
+  },
+  "nominal_gains": {
+   "kp": 7.977064293374174,
+   "ki": 45.123540796210726,
+   "kd": 0.27345435648159033
+  },
+  "u_limit": 10.0,
+  "u_required": 0.42511026827678344,
+  "violations": [
+   "end_error",
+   "settling"
+  ],
+  "metrics": {
+   "overshoot": 0.0,
+   "rise": 0.146,
+   "settle": null,
+   "sse": 5.449903912330396,
+   "oscillations": 0.0,
+   "sat": 0.0,
+   "sat_time": 0.0,
+   "ripple": 0.10087628548005431,
+   "u_peak": 5.274140359627294,
+   "T": 2.85
+  },
+  "split": "val"
+ },
+ {
+  "input": "DC motor position control (QUBE-Servo 3 with inertia disc) under PID control (Kp=6.818, Ki=300, Kd=0.277). Requirements: settle within 1.00 s with at most 15% overshoot, no more than 2 oscillation cycles, at most 2% error at the end and control ripple of at most 0.8%. Measured step response: 75% overshoot, 10-90% rise time 28 ms, oscillates 2 times, actuator saturated for 26 ms (1% of the recording), control ripple 0.3%, settling time 302 ms, 0.0% error left at the end of the recording.",
+  "output": "Diagnosis: Ki too high (integral overshoot).\nEvidence: overshoot 75% against a 15% limit.\nFix: Reduce Ki (try a third of the current value); add anti-windup if the actuator saturates.\nThis is a learning aid; check with your instructor if unsure.",
+  "spec": {
+   "os_max": 15.0,
+   "ts_max": 1.0,
+   "sse_max": 2.0,
+   "osc_max": 2,
+   "rip_max": 0.8
+  },
+  "label": "ki_too_high",
+  "plant": "dc_motor",
+  "gains": {
+   "kp": 6.8183819239388725,
+   "ki": 300.21412077645437,
+   "kd": 0.2770747470621447
+  },
+  "nominal_gains": {
+   "kp": 6.8183819239388725,
+   "ki": 32.26407426260012,
+   "kd": 0.2770747470621447
+  },
+  "u_limit": 10.0,
+  "u_required": 0.2844188027029665,
+  "violations": [
+   "overshoot"
+  ],
+  "metrics": {
+   "overshoot": 75.24049987393494,
+   "rise": 0.028000000000000004,
+   "settle": 0.302,
+   "sse": 0.0010408715167273945,
+   "oscillations": 2.0,
+   "sat": 0.866089273817455,
+   "sat_time": 0.026000000000000002,
+   "ripple": 0.32889886288334713,
+   "u_peak": 10.0,
+   "T": 3.0
+  },
+  "split": "val"
+ },
+ {
+  "input": "System: a first-order process (like a motor speed loop or small thermal system)\nRequirements: settle within 7.70 s with at most 15% overshoot, no more than 2 oscillation cycles, at most 2% error at the end and control ripple of at most 0.6%\nPID gains: Kp=0.474, Ki=4.867, Kd=0\nObserved: peak overshoot of 76%, 10-90% rise time 298 ms, oscillates 6 times, control signal at its limit for 559 ms (2% of the recording), error at the end of the recording 0.0%, control ripple 0.2%, 2% settling time 8.09 s\nDiagnose the tuning.",
+  "output": "Diagnosis: Ki too high (integral overshoot).\nEvidence: overshoot 76% against a 15% limit; 6 oscillation cycles against a limit of 2; settles at 8.09 s against a 7.70 s target.\nFix: Reduce Ki (try a third of the current value); add anti-windup if the actuator saturates.\nThis is a learning aid; check with your instructor if unsure.",
+  "spec": {
+   "os_max": 15.0,
+   "ts_max": 7.7,
+   "sse_max": 2.0,
+   "osc_max": 2,
+   "rip_max": 0.6
+  },
+  "label": "ki_too_high",
+  "plant": "first_order",
+  "gains": {
+   "kp": 0.47429679721579465,
+   "ki": 4.867117252916923,
+   "kd": 0.0
+  },
+  "nominal_gains": {
+   "kp": 0.47429679721579465,
+   "ki": 0.5916383935700724,
+   "kd": 0.0
+  },
+  "u_limit": 1.1896411238145426,
+  "u_required": 0.22005725597073728,
+  "violations": [
+   "oscillation",
+   "overshoot",
+   "settling"
+  ],
+  "metrics": {
+   "overshoot": 76.28828670522209,
+   "rise": 0.29835327128527844,
+   "settle": 8.092832483613178,
+   "sse": 0.00660572560269794,
+   "oscillations": 6.0,
+   "sat": 2.4154589371980677,
+   "sat_time": 0.5594123836598971,
+   "ripple": 0.23777387439936604,
+   "u_peak": 1.1896411238145426,
+   "T": 23.12237852460908
+  },
+  "split": "val"
+ },
+ {
+  "input": "System: a second-order system (like a mass-spring-damper)\nRequirements: settle within 1.10 s with at most 10% overshoot, no more than 2 oscillation cycles, at most 2% error at the end and control ripple of at most 2.7%\nPID gains: Kp=1.439, Ki=63.186, Kd=0.067\nObserved: peak overshoot of 98%, rise time 56 ms, did not settle within the 3.30 s recording, 10 oscillation cycles, control-signal ripple 1.8% of full scale, control signal at its limit for 69 ms (2% of the recording), 1.3% error left at the end of the recording\nDiagnose the tuning.",
+  "output": "Diagnosis: Ki too high (integral overshoot).\nEvidence: overshoot 98% against a 10% limit; 10 oscillation cycles against a limit of 2; not settled after the 3.30 s recording against a 1.10 s target.\nFix: Reduce Ki (try a third of the current value); add anti-windup if the actuator saturates.\nThis is a learning aid; check with your instructor if unsure.",
+  "spec": {
+   "os_max": 10.0,
+   "ts_max": 1.1,
+   "sse_max": 2.0,
+   "osc_max": 2,
+   "rip_max": 2.7
+  },
+  "label": "ki_too_high",
+  "plant": "second_order",
+  "gains": {
+   "kp": 1.4387869531257624,
+   "ki": 63.186044160985,
+   "kd": 0.06707451530789203
+  },
+  "nominal_gains": {
+   "kp": 1.4387869531257624,
+   "ki": 8.099674686905189,
+   "kd": 0.06707451530789203
+  },
+  "u_limit": 2.4297237641014164,
+  "u_required": 0.47651692265070966,
+  "violations": [
+   "oscillation",
+   "overshoot",
+   "settling"
+  ],
+  "metrics": {
+   "overshoot": 98.22717286801314,
+   "rise": 0.055945693960086855,
+   "settle": null,
+   "sse": 1.269620168361459,
+   "oscillations": 10.0,
+   "sat": 2.100271002710027,
+   "sat_time": 0.0693726605105077,
+   "ripple": 1.794434876465416,
+   "u_peak": 2.4297237641014164,
+   "T": 3.300795943645124
+  },
+  "split": "val"
+ },
+ {
+  "input": "DC motor position control (QUBE-Servo 3 with inertia disc) under PID control (Kp=2.22, Ki=49.442, Kd=0.144). Requirements: settle within 1.50 s with at most 15% overshoot, no more than 2 oscillation cycles, at most 2% error at the end and control ripple of at most 0.3%. Measured step response: 61% overshoot, 10-90% rise time 54 ms, control ripple 0.1%, 3 oscillation cycles, actuator never at its limit, 0.0% error left at the end of the recording, settling time 964 ms.",
+  "output": "Diagnosis: Ki too high (integral overshoot).\nEvidence: overshoot 61% against a 15% limit; 3 oscillation cycles against a limit of 2.\nFix: Reduce Ki (try a third of the current value); add anti-windup if the actuator saturates.\nThis is a learning aid; check with your instructor if unsure.",
+  "spec": {
+   "os_max": 15.0,
+   "ts_max": 1.5,
+   "sse_max": 2.0,
+   "osc_max": 2,
+   "rip_max": 0.3
+  },
+  "label": "ki_too_high",
+  "plant": "dc_motor",
+  "gains": {
+   "kp": 2.219877291466637,
+   "ki": 49.44198924129103,
+   "kd": 0.1443780012331295
+  },
+  "nominal_gains": {
+   "kp": 2.219877291466637,
+   "ki": 5.718279053691881,
+   "kd": 0.1443780012331295
+  },
+  "u_limit": 10.0,
+  "u_required": 0.16613136796834113,
+  "violations": [
+   "oscillation",
+   "overshoot"
+  ],
+  "metrics": {
+   "overshoot": 61.39135907352884,
+   "rise": 0.054,
+   "settle": 0.964,
+   "sse": 0.013854051561863177,
+   "oscillations": 3.0,
+   "sat": 0.0,
+   "sat_time": 0.0,
+   "ripple": 0.07261894335125749,
+   "u_peak": 1.7971922807434262,
+   "T": 4.5
+  },
+  "split": "val"
+ },
+ {
+  "input": "Plant: a first-order process (like a motor speed loop or small thermal system).\nRequirements: overshoot at most 10%, settling time at most 550 ms, at most 2 oscillation cycles, error at most 2% at the end, control ripple at most 0.8%.\nGains: Kp=1.83, Ki=117, Kd=0.\nStep response: peak overshoot of 53%, 10-90% rise time 25 ms, 0.0% error left at the end of the recording, control-signal ripple 0.3% of full scale, control signal at its limit for 23 ms (1% of the recording), oscillates 2 times, 2% settling time 333 ms.",
+  "output": "Diagnosis: Ki too high (integral overshoot).\nEvidence: overshoot 53% against a 10% limit.\nFix: Reduce Ki (try a third of the current value); add anti-windup if the actuator saturates.\nThis is a learning aid; check with your instructor if unsure.",
+  "spec": {
+   "os_max": 10.0,
+   "ts_max": 0.55,
+   "sse_max": 2.0,
+   "osc_max": 2,
+   "rip_max": 0.8
+  },
+  "label": "ki_too_high",
+  "plant": "first_order",
+  "gains": {
+   "kp": 1.8296606754848093,
+   "ki": 117.18620340001497,
+   "kd": 0.0
+  },
+  "nominal_gains": {
+   "kp": 1.8296606754848093,
+   "ki": 20.751146216697265,
+   "kd": 0.0
+  },
+  "u_limit": 4.265186597984725,
+  "u_required": 0.6700380224559253,
+  "violations": [
+   "overshoot"
+  ],
+  "metrics": {
+   "overshoot": 53.403650558636805,
+   "rise": 0.025067571247449013,
+   "settle": 0.33271503655705054,
+   "sse": 9.135633258934502e-05,
+   "oscillations": 2.0,
+   "sat": 1.2195121951219512,
+   "sat_time": 0.022788701134044555,
+   "ripple": 0.28278292923963005,
+   "u_peak": 4.265186597984725,
+   "T": 1.866394622878249
+  },
+  "split": "val"
+ },
+ {
+  "input": "Plant: a second-order system (like a mass-spring-damper).\nRequirements: settle within 4.40 s with at most 10% overshoot, no more than 2 oscillation cycles, at most 2% error at the end and control ripple of at most 4.7%.\nGains: Kp=1.005, Ki=9.975, Kd=0.141.\nStep response: 85% overshoot, 10-90% rise time 223 ms, error at the end of the recording 0.0%, 2% settling time 9.98 s, control-signal ripple 1.5% of full scale, actuator saturated for 328 ms (2% of the recording), oscillates 9 times.",
+  "output": "Diagnosis: Ki too high (integral overshoot).\nEvidence: overshoot 85% against a 10% limit; 9 oscillation cycles against a limit of 2; settles at 9.98 s against a 4.40 s target.\nFix: Reduce Ki (try a third of the current value); add anti-windup if the actuator saturates.\nThis is a learning aid; check with your instructor if unsure.",
+  "spec": {
+   "os_max": 10.0,
+   "ts_max": 4.4,
+   "sse_max": 2.0,
+   "osc_max": 2,
+   "rip_max": 4.7
+  },
+  "label": "ki_too_high",
+  "plant": "second_order",
+  "gains": {
+   "kp": 1.0045046577531567,
+   "ki": 9.975077661243542,
+   "kd": 0.14071448037531967
+  },
+  "nominal_gains": {
+   "kp": 1.0045046577531567,
+   "ki": 1.2167965875131324,
+   "kd": 0.14071448037531967
+  },
+  "u_limit": 2.4793933263150576,
+  "u_required": 0.4854569677855075,
+  "violations": [
+   "oscillation",
+   "overshoot",
+   "settling"
+  ],
+  "metrics": {
+   "overshoot": 84.50396412262518,
+   "rise": 0.22264093039506072,
+   "settle": 9.977829064810223,
+   "sse": 0.029900323879290754,
+   "oscillations": 9.0,
+   "sat": 2.484472049689441,
+   "sat_time": 0.3281024237400895,
+   "ripple": 1.4520918258191056,
+   "u_peak": 2.4793933263150576,
+   "T": 13.200263583686102
+  },
+  "split": "val"
+ },
+ {
+  "input": "I am tuning a PID controller for DC motor position control (QUBE-Servo 3 with inertia disc). Requirements: settle within 1.10 s with at most 10% overshoot, no more than 2 oscillation cycles, at most 2% error at the end and control ripple of at most 0.4%. Gains are Kp=5.202, Ki=194, Kd=0.206. The step response shows 81% overshoot, rise time 32 ms, control-signal ripple 0.3% of full scale, 4 oscillation cycles, actuator never at its limit, 0.0% error left at the end of the recording, settling time 684 ms. What is wrong?",
+  "output": "Diagnosis: Ki too high (integral overshoot).\nEvidence: overshoot 81% against a 10% limit; 4 oscillation cycles against a limit of 2.\nFix: Reduce Ki (try a third of the current value); add anti-windup if the actuator saturates.\nThis is a learning aid; check with your instructor if unsure.",
+  "spec": {
+   "os_max": 10.0,
+   "ts_max": 1.1,
+   "sse_max": 2.0,
+   "osc_max": 2,
+   "rip_max": 0.4
+  },
+  "label": "ki_too_high",
+  "plant": "dc_motor",
+  "gains": {
+   "kp": 5.202475438916936,
+   "ki": 194.15290802751974,
+   "kd": 0.2064290918270315
+  },
+  "nominal_gains": {
+   "kp": 5.202475438916936,
+   "ki": 19.589127129505503,
+   "kd": 0.2064290918270315
+  },
+  "u_limit": 10.0,
+  "u_required": 0.4370338867456103,
+  "violations": [
+   "oscillation",
+   "overshoot"
+  ],
+  "metrics": {
+   "overshoot": 80.89204791996025,
+   "rise": 0.032,
+   "settle": 0.684,
+   "sse": 0.00035339970226713475,
+   "oscillations": 4.0,
+   "sat": 0.0,
+   "sat_time": 0.0,
+   "ripple": 0.2670453049271218,
+   "u_peak": 8.815380917525799,
+   "T": 3.3000000000000003
+  },
+  "split": "val"
+ },
+ {
+  "input": "I am tuning a PID controller for a first-order process (like a motor speed loop or small thermal system). Requirements: settle within 450 ms with at most 15% overshoot, no more than 2 oscillation cycles, at most 2% error at the end and control ripple of at most 0.8%. Gains are Kp=1.048, Ki=109, Kd=0. The step response shows 81% overshoot, 10-90% rise time 20 ms, 2% settling time 632 ms, control ripple 0.3%, 0.0% error left at the end of the recording, 7 oscillation cycles, actuator saturated for 43 ms (3% of the recording). What is wrong?",
+  "output": "Diagnosis: Ki too high (integral overshoot).\nEvidence: overshoot 81% against a 15% limit; 7 oscillation cycles against a limit of 2; settles at 632 ms against a 450 ms target.\nFix: Reduce Ki (try a third of the current value); add anti-windup if the actuator saturates.\nThis is a learning aid; check with your instructor if unsure.",
+  "spec": {
+   "os_max": 15.0,
+   "ts_max": 0.45,
+   "sse_max": 2.0,
+   "osc_max": 2,
+   "rip_max": 0.8
+  },
+  "label": "ki_too_high",
+  "plant": "first_order",
+  "gains": {
+   "kp": 1.0479071460503364,
+   "ki": 109.18210289149356,
+   "kd": 0.0
+  },
+  "nominal_gains": {
+   "kp": 1.0479071460503364,
+   "ki": 17.806954536927922,
+   "kd": 0.0
+  },
+  "u_limit": 2.4175764112644478,
+  "u_required": 0.4441875322214892,
+  "violations": [
+   "oscillation",
+   "overshoot",
+   "settling"
+  ],
+  "metrics": {
+   "overshoot": 80.8092063909579,
+   "rise": 0.020481933795082348,
+   "settle": 0.6317888809098479,
+   "sse": 0.02804623111720272,
+   "oscillations": 7.0,
+   "sat": 3.0100334448160537,
+   "sat_time": 0.04253940095901718,
+   "ripple": 0.3141423981956426,
+   "u_peak": 2.4175764112644478,
+   "T": 1.4116778984918295
+  },
+  "split": "val"
+ },
+ {
+  "input": "Plant: a second-order system (like a mass-spring-damper).\nRequirements: overshoot at most 15%, settling time at most 4.00 s, at most 2 oscillation cycles, error at most 2% at the end, control ripple at most 5.3%.\nGains: Kp=0.922, Ki=6.72, Kd=0.19.\nStep response: overshoot 78%, rise time 258 ms, 2% settling time 9.67 s, 7 oscillation cycles, actuator never at its limit, control-signal ripple 1.8% of full scale, 0.2% error left at the end of the recording.",
+  "output": "Diagnosis: Ki too high (integral overshoot).\nEvidence: overshoot 78% against a 15% limit; 7 oscillation cycles against a limit of 2; settles at 9.67 s against a 4.00 s target.\nFix: Reduce Ki (try a third of the current value); add anti-windup if the actuator saturates.\nThis is a learning aid; check with your instructor if unsure.",
+  "spec": {
+   "os_max": 15.0,
+   "ts_max": 4.0,
+   "sse_max": 2.0,
+   "osc_max": 2,
+   "rip_max": 5.3
+  },
+  "label": "ki_too_high",
+  "plant": "second_order",
+  "gains": {
+   "kp": 0.922195948655978,
+   "ki": 6.720413416006538,
+   "kd": 0.19010172498538114
+  },
+  "nominal_gains": {
+   "kp": 0.922195948655978,
+   "ki": 1.3616885837831836,
+   "kd": 0.19010172498538114
+  },
+  "u_limit": 3.023570730226422,
+  "u_required": 0.6626503140121646,
+  "violations": [
+   "oscillation",
+   "overshoot",
+   "settling"
+  ],
+  "metrics": {
+   "overshoot": 78.44720977719695,
+   "rise": 0.2577879796213798,
+   "settle": 9.667049235801743,
+   "sse": 0.18643123945119433,
+   "oscillations": 7.0,
+   "sat": 0.0,
+   "sat_time": 0.0,
+   "ripple": 1.7988200991805523,
+   "u_peak": 2.9784243186914185,
+   "T": 12.004717505550165
+  },
+  "split": "val"
+ },
+ {
+  "input": "System: DC motor position control (QUBE-Servo 3 with inertia disc)\nRequirements: settle within 760 ms with at most 15% overshoot, no more than 2 oscillation cycles, at most 2% error at the end and control ripple of at most 0.7%\nPID gains: Kp=6.859, Ki=410, Kd=0.251\nObserved: overshoot 100%, 10-90% rise time 22 ms, 0.0% error left at the end of the recording, oscillates 4 times, actuator saturated for 72 ms (3% of the recording), control ripple 0.3%, 2% settling time 472 ms\nDiagnose the tuning.",
+  "output": "Diagnosis: Ki too high (integral overshoot).\nEvidence: overshoot 100% against a 15% limit; 4 oscillation cycles against a limit of 2.\nFix: Reduce Ki (try a third of the current value); add anti-windup if the actuator saturates.\nThis is a learning aid; check with your instructor if unsure.",
+  "spec": {
+   "os_max": 15.0,
+   "ts_max": 0.76,
+   "sse_max": 2.0,
+   "osc_max": 2,
+   "rip_max": 0.7
+  },
+  "label": "ki_too_high",
+  "plant": "dc_motor",
+  "gains": {
+   "kp": 6.858508116723061,
+   "ki": 410.2378500319517,
+   "kd": 0.25089708860908116
+  },
+  "nominal_gains": {
+   "kp": 6.858508116723061,
+   "ki": 31.534088065719693,
+   "kd": 0.25089708860908116
+  },
+  "u_limit": 10.0,
+  "u_required": 0.38747901612168784,
+  "violations": [
+   "oscillation",
+   "overshoot"
+  ],
+  "metrics": {
+   "overshoot": 99.60466714198735,
+   "rise": 0.022000000000000006,
+   "settle": 0.47200000000000003,
+   "sse": 0.003872574440465421,
+   "oscillations": 4.0,
+   "sat": 3.1551270815074495,
+   "sat_time": 0.07200000000000001,
+   "ripple": 0.296860822880008,
+   "u_peak": 10.0,
+   "T": 2.2800000000000002
+  },
+  "split": "val"
+ },
+ {
+  "input": "System: a first-order process (like a motor speed loop or small thermal system)\nRequirements: overshoot at most 15%, settling time at most 1.10 s, at most 2 oscillation cycles, error at most 2% at the end, control ripple at most 0.7%\nPID gains: Kp=2.509, Ki=14.795, Kd=0.154\nObserved: overshoot 10%, 10-90% rise time 213 ms, no oscillation, control-signal ripple 1.0% of full scale, settling time 886 ms, 0.0% error left at the end of the recording, actuator never at its limit\nDiagnose the tuning.",
+  "output": "Diagnosis: Kd too high (noise amplification).\nEvidence: control ripple 1.0% against a 0.7% limit.\nFix: Reduce Kd or strengthen the derivative filtering, then re-test.\nThis is a learning aid; check with your instructor if unsure.",
+  "spec": {
+   "os_max": 15.0,
+   "ts_max": 1.1,
+   "sse_max": 2.0,
+   "osc_max": 2,
+   "rip_max": 0.7
+  },
+  "label": "kd_too_high",
+  "plant": "first_order",
+  "gains": {
+   "kp": 2.5086885261160976,
+   "ki": 14.795460514013222,
+   "kd": 0.153817784857738
+  },
+  "nominal_gains": {
+   "kp": 2.5086885261160976,
+   "ki": 14.795460514013222,
+   "kd": 0.0
+  },
+  "u_limit": 4.939285240083863,
+  "u_required": 1.372278138310832,
+  "violations": [
+   "ripple"
+  ],
+  "metrics": {
+   "overshoot": 10.211491862431071,
+   "rise": 0.21307321763861697,
+   "settle": 0.8859360101816179,
+   "sse": 0.009975898829686794,
+   "oscillations": 0.0,
+   "sat": 0.0,
+   "sat_time": 0.0,
+   "ripple": 0.9637463359616929,
+   "u_peak": 3.161757435997704,
+   "T": 4.037176755258006
+  },
+  "split": "val"
+ },
+ {
+  "input": "System: a second-order system (like a mass-spring-damper)\nRequirements: settle within 4.30 s with at most 15% overshoot, no more than 2 oscillation cycles, at most 2% error at the end and control ripple of at most 4.4%\nPID gains: Kp=0.86, Ki=1.59, Kd=0.555\nObserved: 15% overshoot, 10-90% rise time 943 ms, settling time 3.62 s, error at the end of the recording 0.0%, control-signal ripple 4.7% of full scale, oscillates once, actuator never at its limit\nDiagnose the tuning.",
+  "output": "Diagnosis: Kd too high (noise amplification).\nEvidence: control ripple 4.7% against a 4.4% limit.\nFix: Reduce Kd or strengthen the derivative filtering, then re-test.\nThis is a learning aid; check with your instructor if unsure.",
+  "spec": {
+   "os_max": 15.0,
+   "ts_max": 4.3,
+   "sse_max": 2.0,
+   "osc_max": 2,
+   "rip_max": 4.4
+  },
+  "label": "kd_too_high",
+  "plant": "second_order",
+  "gains": {
+   "kp": 0.8604727773129995,
+   "ki": 1.5896190462205575,
+   "kd": 0.5550971966809982
+  },
+  "nominal_gains": {
+   "kp": 0.8604727773129995,
+   "ki": 1.5896190462205575,
+   "kd": 0.15693898816109278
+  },
+  "u_limit": 3.886543769931172,
+  "u_required": 1.1113064421117065,
+  "violations": [
+   "ripple"
+  ],
+  "metrics": {
+   "overshoot": 14.662589313657856,
+   "rise": 0.9430426550926011,
+   "settle": 3.6226131948931637,
+   "sse": 0.002597533754534,
+   "oscillations": 1.0,
+   "sat": 0.0,
+   "sat_time": 0.0,
+   "ripple": 4.718958335929665,
+   "u_peak": 1.7293675178535672,
+   "T": 12.903482320341933
+  },
+  "split": "val"
+ },
+ {
+  "input": "I am tuning a PID controller for a first-order process (like a motor speed loop or small thermal system). Requirements: settle within 4.70 s with at most 15% overshoot, no more than 2 oscillation cycles, at most 2% error at the end and control ripple of at most 1.1%. Gains are Kp=1.525, Ki=2.467, Kd=0.38. The step response shows 14% overshoot, rise time 725 ms, actuator never at its limit, control ripple 1.4%, settling time 3.14 s, 0.0% error left at the end of the recording, oscillates once. What is wrong?",
+  "output": "Diagnosis: Kd too high (noise amplification).\nEvidence: control ripple 1.4% against a 1.1% limit.\nFix: Reduce Kd or strengthen the derivative filtering, then re-test.\nThis is a learning aid; check with your instructor if unsure.",
+  "spec": {
+   "os_max": 15.0,
+   "ts_max": 4.7,
+   "sse_max": 2.0,
+   "osc_max": 2,
+   "rip_max": 1.1
+  },
+  "label": "kd_too_high",
+  "plant": "first_order",
+  "gains": {
+   "kp": 1.5248932769539456,
+   "ki": 2.466668092162248,
+   "kd": 0.37982908201605475
+  },
+  "nominal_gains": {
+   "kp": 1.5248932769539456,
+   "ki": 2.466668092162248,
+   "kd": 0.0
+  },
+  "u_limit": 1.9017425357089406,
+  "u_required": 0.6275805424041732,
+  "violations": [
+   "ripple"
+  ],
+  "metrics": {
+   "overshoot": 13.639538207085137,
+   "rise": 0.7254610510356649,
+   "settle": 3.143664554487882,
+   "sse": 0.02025720424146125,
+   "oscillations": 1.0,
+   "sat": 0.0,
+   "sat_time": 0.0,
+   "ripple": 1.3510642628981429,
+   "u_peak": 1.8459479025768535,
+   "T": 14.47467525637827
+  },
+  "split": "val"
+ },
+ {
+  "input": "A first-order process (like a motor speed loop or small thermal system) under PID control (Kp=1.187, Ki=18.803, Kd=0.02). Requirements: overshoot at most 15%, settling time at most 460 ms, at most 2 oscillation cycles, error at most 2% at the end, control ripple at most 0.8%. Measured step response: 15% overshoot, 10-90% rise time 60 ms, control-signal ripple 0.9% of full scale, actuator never at its limit, 1 oscillation cycle, 2% settling time 306 ms, 0.0% error left at the end of the recording.",
+  "output": "Diagnosis: Kd too high (noise amplification).\nEvidence: control ripple 0.9% against a 0.8% limit.\nFix: Reduce Kd or strengthen the derivative filtering, then re-test.\nThis is a learning aid; check with your instructor if unsure.",
+  "spec": {
+   "os_max": 15.0,
+   "ts_max": 0.46,
+   "sse_max": 2.0,
+   "osc_max": 2,
+   "rip_max": 0.8
+  },
+  "label": "kd_too_high",
+  "plant": "first_order",
+  "gains": {
+   "kp": 1.1869721652842695,
+   "ki": 18.80304673611917,
+   "kd": 0.020123201753428233
+  },
+  "nominal_gains": {
+   "kp": 1.1869721652842695,
+   "ki": 18.80304673611917,
+   "kd": 0.0
+  },
+  "u_limit": 1.5147195577247148,
+  "u_required": 0.3278676504512881,
+  "violations": [
+   "ripple"
+  ],
+  "metrics": {
+   "overshoot": 14.54379244993101,
+   "rise": 0.060034139084242995,
+   "settle": 0.30602768460016555,
+   "sse": 0.005593213075280793,
+   "oscillations": 1.0,
+   "sat": 0.0,
+   "sat_time": 0.0,
+   "ripple": 0.9277168080352206,
+   "u_peak": 1.1437080874003753,
+   "T": 1.6004222931482341
+  },
+  "split": "val"
+ },
+ {
+  "input": "A second-order system (like a mass-spring-damper) under PID control (Kp=2.565, Ki=15.715, Kd=0.307). Requirements: overshoot at most 15%, settling time at most 390 ms, at most 2 oscillation cycles, error at most 2% at the end, control ripple at most 4.2%. Measured step response: peak overshoot of 14%, 10-90% rise time 199 ms, 2% settling time 849 ms, actuator never at its limit, error at the end of the recording 0.2%, control-signal ripple 6.6% of full scale, 1 oscillation cycle.",
+  "output": "Diagnosis: Kd too high (noise amplification).\nEvidence: settles at 849 ms against a 390 ms target; control ripple 6.6% against a 4.2% limit.\nFix: Reduce Kd or strengthen the derivative filtering, then re-test.\nThis is a learning aid; check with your instructor if unsure.",
+  "spec": {
+   "os_max": 15.0,
+   "ts_max": 0.39,
+   "sse_max": 2.0,
+   "osc_max": 2,
+   "rip_max": 4.2
+  },
+  "label": "kd_too_high",
+  "plant": "second_order",
+  "gains": {
+   "kp": 2.565019751064076,
+   "ki": 15.715123342487754,
+   "kd": 0.30703637154510716
+  },
+  "nominal_gains": {
+   "kp": 2.565019751064076,
+   "ki": 15.715123342487754,
+   "kd": 0.05798005102941861
+  },
+  "u_limit": 3.211086261271156,
+  "u_required": 0.847955227929913,
+  "violations": [
+   "ripple",
+   "settling"
+  ],
+  "metrics": {
+   "overshoot": 14.065853361397519,
+   "rise": 0.1994895741478689,
+   "settle": 0.8487716786857439,
+   "sse": 0.19917093593179847,
+   "oscillations": 1.0,
+   "sat": 0.0,
+   "sat_time": 0.0,
+   "ripple": 6.646100776126211,
+   "u_peak": 2.4227224676200003,
+   "T": 1.6269692155738926
+  },
+  "split": "val"
+ },
+ {
+  "input": "Plant: a first-order process (like a motor speed loop or small thermal system).\nRequirements: overshoot at most 10%, settling time at most 170 ms, at most 2 oscillation cycles, error at most 2% at the end, control ripple at most 1.2%.\nGains: Kp=0.953, Ki=34.717, Kd=0.\nStep response: peak overshoot of 26%, 10-90% rise time 32 ms, 0.0% error left at the end of the recording, actuator saturated for 56 ms (9% of the recording), no oscillation, 2% settling time 133 ms, control ripple 0.7%.",
+  "output": "Diagnosis: Actuator saturation.\nEvidence: actuator at its limit for 56 ms (9% of the recording); overshoot 26% against a 10% limit.\nFix: The actuator can hold this target but spends long periods at its limit. Use a smaller setpoint step or lower gains so it stays off the limit, and add anti-windup to the integrator. Lower gains cannot add actuator capacity: if the target cannot be held at steady state, a larger actuator or a smaller target is needed.\nThis is a learning aid; check with your instructor if unsure.",
+  "spec": {
+   "os_max": 10.0,
+   "ts_max": 0.17,
+   "sse_max": 2.0,
+   "osc_max": 2,
+   "rip_max": 1.2
+  },
+  "label": "actuator_saturation",
+  "plant": "first_order",
+  "gains": {
+   "kp": 0.9532107924062415,
+   "ki": 34.717400892778514,
+   "kd": 0.0
+  },
+  "nominal_gains": {
+   "kp": 0.9532107924062415,
+   "ki": 34.717400892778514,
+   "kd": 0.0
+  },
+  "u_limit": 0.37152620754031385,
+  "u_required": 0.21955386733134113,
+  "violations": [
+   "overshoot"
+  ],
+  "metrics": {
+   "overshoot": 25.760011149939547,
+   "rise": 0.032099775784097236,
+   "settle": 0.13317992080636087,
+   "sse": 0.006366205178559782,
+   "oscillations": 0.0,
+   "sat": 9.318181818181818,
+   "sat_time": 0.05600386413395688,
+   "ripple": 0.7493509637983277,
+   "u_peak": 0.37152620754031385,
+   "T": 0.6003341045579036
+  },
+  "split": "val"
+ },
+ {
+  "input": "A second-order system (like a mass-spring-damper) under PID control (Kp=9.903, Ki=19.201, Kd=0.905). Requirements: settle within 2.50 s with at most 15% overshoot, no more than 2 oscillation cycles, at most 2% error at the end and control ripple of at most 9.9%. Measured step response: overshoot 26%, rise time 343 ms, settling time 2.00 s, error at the end of the recording 0.0%, actuator saturated for 566 ms (8% of the recording), control ripple 9.9%, no oscillation.",
+  "output": "Diagnosis: Actuator saturation.\nEvidence: actuator at its limit for 566 ms (8% of the recording); overshoot 26% against a 15% limit.\nFix: The actuator can hold this target but spends long periods at its limit. Use a smaller setpoint step or lower gains so it stays off the limit, and add anti-windup to the integrator. Lower gains cannot add actuator capacity: if the target cannot be held at steady state, a larger actuator or a smaller target is needed.\nThis is a learning aid; check with your instructor if unsure.",
+  "spec": {
+   "os_max": 15.0,
+   "ts_max": 2.5,
+   "sse_max": 2.0,
+   "osc_max": 2,
+   "rip_max": 9.9
+  },
+  "label": "actuator_saturation",
+  "plant": "second_order",
+  "gains": {
+   "kp": 9.903257760928023,
+   "ki": 19.200565425089884,
+   "kd": 0.9049108689714987
+  },
+  "nominal_gains": {
+   "kp": 9.903257760928023,
+   "ki": 19.200565425089884,
+   "kd": 0.9049108689714987
+  },
+  "u_limit": 4.1757983829362875,
+  "u_required": 2.276813808047795,
+  "violations": [
+   "overshoot"
+  ],
+  "metrics": {
+   "overshoot": 26.388239601195636,
+   "rise": 0.34263401301758606,
+   "settle": 1.9992223144879335,
+   "sse": 0.0007886956358761451,
+   "oscillations": 0.0,
+   "sat": 7.5408462505236695,
+   "sat_time": 0.5658176361758303,
+   "ripple": 9.862822015572368,
+   "u_peak": 4.1757983829362875,
+   "T": 7.500227110641839
+  },
+  "split": "val"
+ },
+ {
+  "input": "DC motor position control (QUBE-Servo 3 with inertia disc) under PID control (Kp=7.953, Ki=41.66, Kd=0.264). Requirements: overshoot at most 15%, settling time at most 730 ms, at most 2 oscillation cycles, error at most 2% at the end, control ripple at most 1.0%. Measured step response: overshoot 36%, rise time 102 ms, control signal at its limit for 164 ms (7% of the recording), error at the end of the recording 0.0%, control-signal ripple 0.0% of full scale, 2% settling time 708 ms, no oscillation.",
+  "output": "Diagnosis: Actuator saturation.\nEvidence: actuator at its limit for 164 ms (7% of the recording); overshoot 36% against a 15% limit.\nFix: The actuator can hold this target but spends long periods at its limit. Use a smaller setpoint step or lower gains so it stays off the limit, and add anti-windup to the integrator. Lower gains cannot add actuator capacity: if the target cannot be held at steady state, a larger actuator or a smaller target is needed.\nThis is a learning aid; check with your instructor if unsure.",
+  "spec": {
+   "os_max": 15.0,
+   "ts_max": 0.73,
+   "sse_max": 2.0,
+   "osc_max": 2,
+   "rip_max": 1.0
+  },
+  "label": "actuator_saturation",
+  "plant": "dc_motor",
+  "gains": {
+   "kp": 7.952999258152768,
+   "ki": 41.66044603293507,
+   "kd": 0.26440297783219363
+  },
+  "nominal_gains": {
+   "kp": 7.952999258152768,
+   "ki": 41.66044603293507,
+   "kd": 0.26440297783219363
+  },
+  "u_limit": 1.4262872217743578,
+  "u_required": 0.48892819376067886,
+  "violations": [
+   "overshoot"
+  ],
+  "metrics": {
+   "overshoot": 35.84112704507453,
+   "rise": 0.102,
+   "settle": 0.708,
+   "sse": 0.01107304855037664,
+   "oscillations": 0.0,
+   "sat": 7.481751824817519,
+   "sat_time": 0.164,
+   "ripple": 9.130260957734106e-11,
+   "u_peak": 1.4262872217743578,
+   "T": 2.19
+  },
+  "split": "val"
+ },
+ {
+  "input": "System: a first-order process (like a motor speed loop or small thermal system)\nRequirements: overshoot at most 15%, settling time at most 590 ms, at most 2 oscillation cycles, error at most 2% at the end, control ripple at most 1.1%\nPID gains: Kp=0.789, Ki=7.48, Kd=0\nObserved: 21% overshoot, rise time 96 ms, control-signal ripple 0.8% of full scale, no oscillation, control signal at its limit for 142 ms (6% of the recording), error at the end of the recording 0.0%, 2% settling time 464 ms\nDiagnose the tuning.",
+  "output": "Diagnosis: Actuator saturation.\nEvidence: actuator at its limit for 142 ms (6% of the recording); overshoot 21% against a 15% limit.\nFix: The actuator can hold this target but spends long periods at its limit. Use a smaller setpoint step or lower gains so it stays off the limit, and add anti-windup to the integrator. Lower gains cannot add actuator capacity: if the target cannot be held at steady state, a larger actuator or a smaller target is needed.\nThis is a learning aid; check with your instructor if unsure.",
+  "spec": {
+   "os_max": 15.0,
+   "ts_max": 0.59,
+   "sse_max": 2.0,
+   "osc_max": 2,
+   "rip_max": 1.1
+  },
+  "label": "actuator_saturation",
+  "plant": "first_order",
+  "gains": {
+   "kp": 0.7889406468843948,
+   "ki": 7.47964370910799,
+   "kd": 0.0
+  },
+  "nominal_gains": {
+   "kp": 0.7889406468843948,
+   "ki": 7.47964370910799,
+   "kd": 0.0
+  },
+  "u_limit": 0.6416308465501483,
+  "u_required": 0.31604201096612633,
+  "violations": [
+   "overshoot"
+  ],
+  "metrics": {
+   "overshoot": 20.701802585771805,
+   "rise": 0.09579220405873645,
+   "settle": 0.4635106648003377,
+   "sse": 0.002904201734358158,
+   "oscillations": 0.0,
+   "sat": 6.284153005464481,
+   "sat_time": 0.1421432705387702,
+   "ripple": 0.7842215371488107,
+   "u_peak": 0.6416308465501483,
+   "T": 2.258841973126979
+  },
+  "split": "val"
+ },
+ {
+  "input": "A second-order system (like a mass-spring-damper) under PID control (Kp=2.903, Ki=3.402, Kd=0.357). Requirements: overshoot at most 15%, settling time at most 3.90 s, at most 2 oscillation cycles, error at most 2% at the end, control ripple at most 6.9%. Measured step response: peak overshoot of 20%, rise time 537 ms, control signal at its limit for 789 ms (7% of the recording), control-signal ripple 5.3% of full scale, error at the end of the recording 0.0%, no oscillation, settling time 3.03 s.",
+  "output": "Diagnosis: Actuator saturation.\nEvidence: actuator at its limit for 789 ms (7% of the recording); overshoot 20% against a 15% limit.\nFix: The actuator can hold this target but spends long periods at its limit. Use a smaller setpoint step or lower gains so it stays off the limit, and add anti-windup to the integrator. Lower gains cannot add actuator capacity: if the target cannot be held at steady state, a larger actuator or a smaller target is needed.\nThis is a learning aid; check with your instructor if unsure.",
+  "spec": {
+   "os_max": 15.0,
+   "ts_max": 3.9,
+   "sse_max": 2.0,
+   "osc_max": 2,
+   "rip_max": 6.9
+  },
+  "label": "actuator_saturation",
+  "plant": "second_order",
+  "gains": {
+   "kp": 2.902843953128722,
+   "ki": 3.402075243925437,
+   "kd": 0.3568970483626239
+  },
+  "nominal_gains": {
+   "kp": 2.902843953128722,
+   "ki": 3.402075243925437,
+   "kd": 0.3568970483626239
+  },
+  "u_limit": 0.7583038259833665,
+  "u_required": 0.44900262054313583,
+  "violations": [
+   "overshoot"
+  ],
+  "metrics": {
+   "overshoot": 19.98741094517111,
+   "rise": 0.5366809895246311,
+   "settle": 3.030669117315564,
+   "sse": 0.0003181118502554387,
+   "oscillations": 0.0,
+   "sat": 6.738544474393531,
+   "sat_time": 0.789236749300928,
+   "ripple": 5.349468764695218,
+   "u_peak": 0.7583038259833665,
+   "T": 11.705959465631365
+  },
+  "split": "val"
+ },
+ {
+  "input": "I am tuning a PID controller for a first-order process (like a motor speed loop or small thermal system). Requirements: overshoot at most 15%, settling time at most 710 ms, at most 2 oscillation cycles, error at most 2% at the end, control ripple at most 1.1%. Gains are Kp=0.921, Ki=7.492, Kd=0. The step response shows 34% overshoot, rise time 185 ms, settling time 758 ms, control ripple 0.9%, error at the end of the recording 0.0%, control signal at its limit for 439 ms (16% of the recording), no oscillation. What is wrong?",
+  "output": "Diagnosis: Actuator saturation.\nEvidence: actuator at its limit for 439 ms (16% of the recording); overshoot 34% against a 15% limit; settles at 758 ms against a 710 ms target.\nFix: The actuator can hold this target but spends long periods at its limit. Use a smaller setpoint step or lower gains so it stays off the limit, and add anti-windup to the integrator. Lower gains cannot add actuator capacity: if the target cannot be held at steady state, a larger actuator or a smaller target is needed.\nThis is a learning aid; check with your instructor if unsure.",
+  "spec": {
+   "os_max": 15.0,
+   "ts_max": 0.71,
+   "sse_max": 2.0,
+   "osc_max": 2,
+   "rip_max": 1.1
+  },
+  "label": "actuator_saturation",
+  "plant": "first_order",
+  "gains": {
+   "kp": 0.920782310519253,
+   "ki": 7.492474848171544,
+   "kd": 0.0
+  },
+  "nominal_gains": {
+   "kp": 0.920782310519253,
+   "ki": 7.492474848171544,
+   "kd": 0.0
+  },
+  "u_limit": 0.4447166492934626,
+  "u_required": 0.2901849613996186,
+  "violations": [
+   "overshoot",
+   "settling"
+  ],
+  "metrics": {
+   "overshoot": 33.951659123987234,
+   "rise": 0.18493549795620912,
+   "settle": 0.7582355416204574,
+   "sse": 0.010248580663706576,
+   "oscillations": 0.0,
+   "sat": 16.351118760757316,
+   "sat_time": 0.4392218076459966,
+   "ripple": 0.9005443063678455,
+   "u_peak": 0.4447166492934626,
+   "T": 2.681564720365032
+  },
+  "split": "val"
+ },
+ {
+  "input": "System: a second-order system (like a mass-spring-damper)\nRequirements: overshoot at most 15%, settling time at most 5.00 s, at most 2 oscillation cycles, error at most 2% at the end, control ripple at most 5.7%\nPID gains: Kp=3.181, Ki=2.612, Kd=0.641\nObserved: peak overshoot of 24%, rise time 1.02 s, 0.0% error left at the end of the recording, settling time 5.24 s, no oscillation, control ripple 5.2%, actuator saturated for 1.95 s (13% of the recording)\nDiagnose the tuning.",
+  "output": "Diagnosis: Actuator saturation.\nEvidence: actuator at its limit for 1.95 s (13% of the recording); overshoot 24% against a 15% limit; settles at 5.24 s against a 5.00 s target.\nFix: The actuator can hold this target but spends long periods at its limit. Use a smaller setpoint step or lower gains so it stays off the limit, and add anti-windup to the integrator. Lower gains cannot add actuator capacity: if the target cannot be held at steady state, a larger actuator or a smaller target is needed.\nThis is a learning aid; check with your instructor if unsure.",
+  "spec": {
+   "os_max": 15.0,
+   "ts_max": 5.0,
+   "sse_max": 2.0,
+   "osc_max": 2,
+   "rip_max": 5.7
+  },
+  "label": "actuator_saturation",
+  "plant": "second_order",
+  "gains": {
+   "kp": 3.180846544214468,
+   "ki": 2.611518224831686,
+   "kd": 0.6412278738859605
+  },
+  "nominal_gains": {
+   "kp": 3.180846544214468,
+   "ki": 2.611518224831686,
+   "kd": 0.6412278738859605
+  },
+  "u_limit": 1.3534289216660502,
+  "u_required": 0.9911260910337572,
+  "violations": [
+   "overshoot",
+   "settling"
+  ],
+  "metrics": {
+   "overshoot": 23.651353121903497,
+   "rise": 1.0197498582818754,
+   "settle": 5.237806090265996,
+   "sse": 0.0034695296544675932,
+   "oscillations": 0.0,
+   "sat": 12.962962962962962,
+   "sat_time": 1.9467951839926712,
+   "ripple": 5.162193245092298,
+   "u_peak": 1.3534289216660502,
+   "T": 15.006546209943506
+  },
+  "split": "val"
+ },
+ {
+  "input": "DC motor position control (QUBE-Servo 3 with inertia disc) under PID control (Kp=3.819, Ki=15.271, Kd=0.183). Requirements: settle within 1.30 s with at most 15% overshoot, no more than 2 oscillation cycles, at most 2% error at the end and control ripple of at most 0.4%. Measured step response: overshoot 47%, 10-90% rise time 174 ms, no oscillation, 0.0% error left at the end of the recording, settling time 1.01 s, control signal at its limit for 298 ms (8% of the recording), control ripple 0.0%.",
+  "output": "Diagnosis: Actuator saturation.\nEvidence: actuator at its limit for 298 ms (8% of the recording); overshoot 47% against a 15% limit.\nFix: The actuator can hold this target but spends long periods at its limit. Use a smaller setpoint step or lower gains so it stays off the limit, and add anti-windup to the integrator. Lower gains cannot add actuator capacity: if the target cannot be held at steady state, a larger actuator or a smaller target is needed.\nThis is a learning aid; check with your instructor if unsure.",
+  "spec": {
+   "os_max": 15.0,
+   "ts_max": 1.3,
+   "sse_max": 2.0,
+   "osc_max": 2,
+   "rip_max": 0.4
+  },
+  "label": "actuator_saturation",
+  "plant": "dc_motor",
+  "gains": {
+   "kp": 3.8185615471525622,
+   "ki": 15.270740689613735,
+   "kd": 0.1827240127876127
+  },
+  "nominal_gains": {
+   "kp": 3.8185615471525622,
+   "ki": 15.270740689613735,
+   "kd": 0.1827240127876127
+  },
+  "u_limit": 0.9524507116048148,
+  "u_required": 0.4029449971559669,
+  "violations": [
+   "overshoot"
+  ],
+  "metrics": {
+   "overshoot": 47.4195840983682,
+   "rise": 0.174,
+   "settle": 1.006,
+   "sse": 0.0028236492075688906,
+   "oscillations": 0.0,
+   "sat": 7.637109174782163,
+   "sat_time": 0.298,
+   "ripple": 0.0,
+   "u_peak": 0.9524507116048148,
+   "T": 3.9
+  },
+  "split": "val"
+ }
+]

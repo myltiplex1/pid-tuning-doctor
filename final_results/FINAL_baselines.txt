@@ -1,0 +1,36 @@
+
+RULES data/test_A.json: n=126  accuracy=0.929  macro-F1=0.934
+  well_tuned             n= 20  P=1.00 R=1.00 F1=1.00   predicted as: {'well_tuned': 20}
+  kp_too_high            n= 20  P=0.76 R=0.80 F1=0.78   predicted as: {'kp_too_high': 16, 'ki_too_high': 4}
+  gain_too_low           n= 17  P=1.00 R=1.00 F1=1.00   predicted as: {'gain_too_low': 17}
+  ki_too_low             n= 20  P=1.00 R=1.00 F1=1.00   predicted as: {'ki_too_low': 20}
+  ki_too_high            n= 19  P=0.78 R=0.74 F1=0.76   predicted as: {'ki_too_high': 14, 'kp_too_high': 5}
+  kd_too_high            n= 13  P=1.00 R=1.00 F1=1.00   predicted as: {'kd_too_high': 13}
+  actuator_saturation    n= 17  P=1.00 R=1.00 F1=1.00   predicted as: {'actuator_saturation': 17}
+
+TREE  data/test_A.json: n=126  accuracy=0.976  macro-F1=0.978
+  well_tuned             n= 20  P=1.00 R=1.00 F1=1.00   predicted as: {'well_tuned': 20}
+  kp_too_high            n= 20  P=0.90 R=0.95 F1=0.93   predicted as: {'kp_too_high': 19, 'ki_too_high': 1}
+  gain_too_low           n= 17  P=1.00 R=1.00 F1=1.00   predicted as: {'gain_too_low': 17}
+  ki_too_low             n= 20  P=1.00 R=1.00 F1=1.00   predicted as: {'ki_too_low': 20}
+  ki_too_high            n= 19  P=0.94 R=0.89 F1=0.92   predicted as: {'ki_too_high': 17, 'kp_too_high': 2}
+  kd_too_high            n= 13  P=1.00 R=1.00 F1=1.00   predicted as: {'kd_too_high': 13}
+  actuator_saturation    n= 17  P=1.00 R=1.00 F1=1.00   predicted as: {'actuator_saturation': 17}
+
+RULES data/test_B.json: n=98  accuracy=0.918  macro-F1=0.921
+  well_tuned             n= 15  P=1.00 R=1.00 F1=1.00   predicted as: {'well_tuned': 15}
+  kp_too_high            n= 15  P=0.89 R=0.53 F1=0.67   predicted as: {'ki_too_high': 7, 'kp_too_high': 8}
+  gain_too_low           n= 15  P=1.00 R=1.00 F1=1.00   predicted as: {'gain_too_low': 15}
+  ki_too_low             n= 15  P=1.00 R=1.00 F1=1.00   predicted as: {'ki_too_low': 15}
+  ki_too_high            n= 15  P=0.67 R=0.93 F1=0.78   predicted as: {'ki_too_high': 14, 'kp_too_high': 1}
+  kd_too_high            n= 14  P=1.00 R=1.00 F1=1.00   predicted as: {'kd_too_high': 14}
+  actuator_saturation    n=  9  P=1.00 R=1.00 F1=1.00   predicted as: {'actuator_saturation': 9}
+
+TREE  data/test_B.json: n=98  accuracy=0.918  macro-F1=0.918
+  well_tuned             n= 15  P=1.00 R=0.87 F1=0.93   predicted as: {'well_tuned': 13, 'kd_too_high': 2}
+  kp_too_high            n= 15  P=1.00 R=0.60 F1=0.75   predicted as: {'ki_too_high': 2, 'kp_too_high': 9, 'gain_too_low': 2, 'kd_too_high': 2}
+  gain_too_low           n= 15  P=0.88 R=1.00 F1=0.94   predicted as: {'gain_too_low': 15}
+  ki_too_low             n= 15  P=1.00 R=1.00 F1=1.00   predicted as: {'ki_too_low': 15}
+  ki_too_high            n= 15  P=0.88 R=1.00 F1=0.94   predicted as: {'ki_too_high': 15}
+  kd_too_high            n= 14  P=0.78 R=1.00 F1=0.88   predicted as: {'kd_too_high': 14}
+  actuator_saturation    n=  9  P=1.00 R=1.00 F1=1.00   predicted as: {'actuator_saturation': 9}

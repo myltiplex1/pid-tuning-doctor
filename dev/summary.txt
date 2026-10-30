@@ -1,0 +1,53 @@
+seed=0  total=662
+
+[train]  380 examples
+  well_tuned               60   {'dc_motor': 20, 'first_order': 20, 'second_order': 20}
+  kp_too_high              60   {'dc_motor': 20, 'first_order': 20, 'second_order': 20}
+  gain_too_low             56   {'dc_motor': 16, 'first_order': 20, 'second_order': 20}
+  ki_too_low               60   {'dc_motor': 20, 'first_order': 20, 'second_order': 20}
+  ki_too_high              59   {'dc_motor': 20, 'second_order': 20, 'first_order': 19}
+  kd_too_high              35   {'first_order': 18, 'second_order': 16, 'dc_motor': 1}
+  actuator_saturation      50   {'dc_motor': 10, 'first_order': 20, 'second_order': 20}
+[val]  61 examples
+  well_tuned               10   {'dc_motor': 4, 'first_order': 3, 'second_order': 3}
+  kp_too_high              10   {'dc_motor': 4, 'first_order': 3, 'second_order': 3}
+  gain_too_low              8   {'dc_motor': 2, 'first_order': 3, 'second_order': 3}
+  ki_too_low               10   {'dc_motor': 4, 'first_order': 3, 'second_order': 3}
+  ki_too_high              10   {'dc_motor': 4, 'first_order': 3, 'second_order': 3}
+  kd_too_high               5   {'first_order': 3, 'second_order': 2}
+  actuator_saturation       8   {'first_order': 3, 'second_order': 3, 'dc_motor': 2}
+[test_A]  127 examples
+  well_tuned               20   {'dc_motor': 7, 'first_order': 7, 'second_order': 6}
+  kp_too_high              20   {'dc_motor': 7, 'first_order': 7, 'second_order': 6}
+  gain_too_low             18   {'first_order': 7, 'second_order': 6, 'dc_motor': 5}
+  ki_too_low               20   {'dc_motor': 7, 'first_order': 7, 'second_order': 6}
+  ki_too_high              20   {'dc_motor': 7, 'first_order': 7, 'second_order': 6}
+  kd_too_high              11   {'first_order': 7, 'second_order': 4}
+  actuator_saturation      18   {'dc_motor': 5, 'first_order': 7, 'second_order': 6}
+[test_B]  94 examples
+  well_tuned               15   {'tank': 5, 'heater': 5, 'pendulum_arm': 5}
+  kp_too_high              15   {'tank': 5, 'heater': 5, 'pendulum_arm': 5}
+  gain_too_low             15   {'tank': 5, 'heater': 5, 'pendulum_arm': 5}
+  ki_too_low               15   {'tank': 5, 'heater': 5, 'pendulum_arm': 5}
+  ki_too_high              15   {'tank': 5, 'heater': 5, 'pendulum_arm': 5}
+  kd_too_high              11   {'tank': 5, 'heater': 5, 'pendulum_arm': 1}
+  actuator_saturation       8   {'tank': 3, 'heater': 5}
+
+Shortfall: plant could not show the fault cleanly after 100 tries (example skipped):
+  ('test_A', 'actuator_saturation', 'dc_motor'): 2
+  ('test_A', 'gain_too_low', 'dc_motor'): 2
+  ('test_A', 'kd_too_high', 'dc_motor'): 7
+  ('test_A', 'kd_too_high', 'second_order'): 2
+  ('test_B', 'actuator_saturation', 'pendulum_arm'): 5
+  ('test_B', 'actuator_saturation', 'tank'): 2
+  ('test_B', 'kd_too_high', 'pendulum_arm'): 4
+  ('train', 'actuator_saturation', 'dc_motor'): 10
+  ('train', 'gain_too_low', 'dc_motor'): 4
+  ('train', 'kd_too_high', 'dc_motor'): 19
+  ('train', 'kd_too_high', 'first_order'): 2
+  ('train', 'kd_too_high', 'second_order'): 4
+  ('train', 'ki_too_high', 'first_order'): 1
+  ('val', 'actuator_saturation', 'dc_motor'): 2
+  ('val', 'gain_too_low', 'dc_motor'): 2
+  ('val', 'kd_too_high', 'dc_motor'): 4
+  ('val', 'kd_too_high', 'second_order'): 1

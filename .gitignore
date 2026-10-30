@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+results/
+*.lora.h5
+*_optimizer.npz
+.ipynb_checkpoints/
