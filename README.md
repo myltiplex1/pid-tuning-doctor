@@ -4,6 +4,8 @@ A small language model that reads a text description of a PID step response and 
 
 It is a learning aid for control students. It was trained only on simulated plants and should not be used to tune real or safety-critical equipment.
 
+   **Try the demo:** [huggingface.co/spaces/timflash/pid-tuning-doctor](https://huggingface.co/spaces/timflash/pid-tuning-doctor). It shows the hand-written rule baseline and a reference checklist beside the model's answer, and warns when they disagree.
+
 ## Results
 
 The selected model (run B, epoch 6) was scored once on two test sets. Test A uses new examples from the plants seen in training, and Test B uses three plants the model never saw.
