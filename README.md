@@ -86,4 +86,4 @@ Code is released under the MIT licence. The dataset is released under CC BY 4.0.
 
 ## Author
 
-Enoch Oluwatimilehin Soyinka, Obafemi Awolowo University.
+Enoch Oluwatimilehin Soyinka.
